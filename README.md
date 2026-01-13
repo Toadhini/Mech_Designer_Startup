@@ -26,7 +26,7 @@ Many
 
 ### Design
 
-![Design image](placeholder.png)
+![Design image](LoginPage.png)
 
 
 
