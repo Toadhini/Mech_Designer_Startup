@@ -52,8 +52,8 @@ I am going to use the required technologies in the following ways.
 
 - **HTML** - This will be utilized to build out the framework for the actual website
 - **CSS** - This will be utilized to create the styling and actual format for the website
-- **React** - Description here
-- **Service** - Description here
+- **React** - The code for user interaction with the webpages such as login and entering other information
+- **Service** - Service with enpoints for retreiving options, submitting information to DB, and login and authentication services
 - **DB/Login** - User data and other information will be stored in a database
 - **WebSocket** - Websocket will be shared so that other users can view the mockups and creations of other users
 
