@@ -2,8 +2,7 @@
 
 [My Notes](notes.md)
 
-This is a webpage that allows users to create sheets for mech designs with options for different parts of it such as heads, bodys, and weapons.
-
+A webpage that allows users to create sheets for mech designs with options for different parts of it such as heads, bodys, and weapons.
 
 
 > [!NOTE]
@@ -17,14 +16,14 @@ This is a webpage that allows users to create sheets for mech designs with optio
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [ ] Proper use of Markdown
-- [ ] A concise and compelling elevator pitch
+- [x] A concise and compelling elevator pitch
 - [ ] Description of key features
-- [ ] Description of how you will use each technology
+- [x] Description of how you will use each technology
 - [ ] One or more rough sketches of your application. Images must be embedded in this file using Markdown image references.
 
 ### Elevator pitch
 
-Current idea is for a simple D&D character creator or Mech design sheet type of idea. It would be a simple ideas where users could 1. login to save sheets/characters, 2. upload them to database for viewing later, and 3. view other characters.
+Many 
 
 ### Design
 
@@ -50,10 +49,10 @@ sequenceDiagram
 I am going to use the required technologies in the following ways.
 
 - **HTML** - This will be utilized to build out the framework for the actual website
-- **CSS** - This will be utilized to create the styling and actual format for the website
-- **React** - The code for user interaction with the webpages such as login and entering other information
-- **Service** - Service with enpoints for retreiving options, submitting information to DB, and login and authentication services
-- **DB/Login** - User data and other information will be stored in a database
+- **CSS** - This will be utilized to create the styling and actual format for the website as well as the styling of the input sheet
+- **React** - The code for user interaction with the webpages such as login and entering other information for mechs
+- **Service** - Service with endpoints for retreiving options, submitting information to DB, and login and authentication services
+- **DB/Login** - User data and other information will be stored in a database as well as user login and information to store their designs
 - **WebSocket** - Websocket will be shared so that other users can view the mockups and creations of other users
 
 ## 🚀 AWS deliverable
