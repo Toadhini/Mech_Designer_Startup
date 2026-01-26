@@ -116,3 +116,7 @@ Use to ssh into server: ssh -i ~/keys/production.pem ubuntu@100.31.226.5
 whois and nslookup
 
 commands that can be used with a domain name to learn certain information regarding that site
+
+
+## HTML
+The "bones" or structure that make up the code for the site.
