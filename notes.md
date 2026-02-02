@@ -35,41 +35,8 @@ Index.html is required as that is the file the browser will load by default
 
 ## CSS
 
-This took a couple hours to get it how I wanted. It was important to make it responsive and Bootstrap helped with that. It looks great on all kinds of screen sizes.
-
-Bootstrap seems a bit like magic. It styles things nicely, but is very opinionated. You either do, or you do not. There doesn't seem to be much in between.
-
-I did like the navbar it made it super easy to build a responsive header.
-
-```html
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand">
-            <img src="logo.svg" width="30" height="30" class="d-inline-block align-top" alt="" />
-            Calmer
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" href="play.html">Play</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-```
-
-I also used SVG to make the icon and logo for the app. This turned out to be a piece of cake.
+At first I was not sure what to do with my style of my startup so I spun up a simple css file that would cover all the pages that I would then go back over later once a style had been better solidified in my mind.
+I a thinking I want to do something mechanical seeming or something similar. I also need to create the CSS for the statistics as I think they could look a lot better than a simple table.
 
 ```html
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
