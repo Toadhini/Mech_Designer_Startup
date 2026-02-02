@@ -38,6 +38,11 @@ Index.html is required as that is the file the browser will load by default
 At first I was not sure what to do with my style of my startup so I spun up a simple css file that would cover all the pages that I would then go back over later once a style had been better solidified in my mind.
 I a thinking I want to do something mechanical seeming or something similar. I also need to create the CSS for the statistics as I think they could look a lot better than a simple table.
 
+Simon CSS deployed succsessfully with no problems.
+
+I think it would be nice to have a photo perhaps of something mech related to give it some more styling. At least a more "Mechanic" font to help push the theme of the page.
+
+
 ```html
 <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
   <rect width="100" height="100" fill="#0066aa" rx="10" ry="10" />
