@@ -40,16 +40,30 @@ I a thinking I want to do something mechanical seeming or something similar. I a
 
 Simon CSS deployed succsessfully with no problems.
 Adding the button reactivity color is nice and helps it look better but I am unsure of the styling that I have in at the moment, I like the font but not sure about the colors.
+```css
+part-option {
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    background-color: #666;
+    border: 1px solid #999;
+    cursor: pointer;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 12px;
+}
+
+.part-option:hover {
+    background-color: white;
+    color: blue;
+    border-color: #0052a3;
+}
+
+.part-option:active {
+    background-color: blue
+}
+```
 I think it would be nice to have a photo perhaps of something mech related to give it some more styling. At least a more "Mechanic" font to help push the theme of the page.
 I think I want to base it similar to the Amored Core 6 part store / garage. Adding a line to seperate the parts list from the others and a background would help with the styling of it and help make it look less like its original html styling
-
-
-```html
-<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" fill="#0066aa" rx="10" ry="10" />
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="72" font-family="Arial" fill="white">C</text>
-</svg>
-```
 
 ## React Part 1: Routing
 
