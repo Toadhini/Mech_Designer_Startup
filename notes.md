@@ -39,7 +39,7 @@ At first I was not sure what to do with my style of my startup so I spun up a si
 I a thinking I want to do something mechanical seeming or something similar. I also need to create the CSS for the statistics as I think they could look a lot better than a simple table.
 
 Simon CSS deployed succsessfully with no problems.
-
+Adding the button reactivity color is nice and helps it look better but I am unsure of the styling that I have in at the moment, I like the font but not sure about the colors.
 I think it would be nice to have a photo perhaps of something mech related to give it some more styling. At least a more "Mechanic" font to help push the theme of the page.
 I think I want to base it similar to the Amored Core 6 part store / garage. Adding a line to seperate the parts list from the others and a background would help with the styling of it and help make it look less like its original html styling
 
