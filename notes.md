@@ -40,6 +40,7 @@ I a thinking I want to do something mechanical seeming or something similar. I a
 
 Simon CSS deployed succsessfully with no problems.
 Adding the button reactivity color is nice and helps it look better but I am unsure of the styling that I have in at the moment, I like the font but not sure about the colors.
+
 ```css
 part-option {
     width: 100%;
