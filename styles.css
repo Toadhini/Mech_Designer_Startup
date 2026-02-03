@@ -144,11 +144,14 @@ footer a:hover {
 }
 
 .part-option:hover {
-    background-color: #e0e0e0;
-    color: white;
+    background-color: white;
+    color: blue;
     border-color: #0052a3;
 }
 
+.part-option:active {
+    background-color: blue
+}
 .mech-box {
     border: 1px solid #999;
     display: inline-block;
