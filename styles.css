@@ -121,6 +121,34 @@ footer a:hover {
     padding-left: 20px;
 }
 
+.part-buttons {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.part-buttons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.part-option {
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    background-color: #666;
+    border: 1px solid #999;
+    cursor: pointer;
+    font-family: 'Orbitron', Arial, sans-serif;
+    font-size: 12px;
+}
+
+.part-option:hover {
+    background-color: #e0e0e0;
+    color: white;
+    border-color: #0052a3;
+}
+
 .mech-box {
     border: 1px solid #999;
     display: inline-block;

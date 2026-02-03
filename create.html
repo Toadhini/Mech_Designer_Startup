@@ -5,134 +5,136 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div style="padding: 10px;">
-        <a href="index.html">Home</a> <br>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="browse.html">Browse Mech Sheets</a>
-        </div>
+    </div>
     <hr>
     <table width="100%" cellpadding="10">
         <tr>
             <td width="33%" align="center" valign="top">
-                <div style="border: 1px solid #999; padding: 10px; width: 200px; display: inline-block;">Part List</div>
+                <div class="section-header">Part List</div>
                 <br><br>
-                <div style="text-align: left; padding-left: 20px;">
+                <div class="parts-list">
                     <details>
                         <summary>Head</summary>
-                        <ul>
-                            <li>Light Head</li>
-                            <li>Medium Head</li>
-                            <li>Heavy Head</li>
+                        <ul class="part-buttons">
+                            <li><button class="part-option">Light Head</button></li>
+                            <li><button class="part-option">Medium Head</button></li>
+                            <li><button class="part-option">Heavy Head</button></li>
                         </ul>
                     </details>
                     <details>
                         <summary>Left Shoulder</summary>
-                        <ul>
-                            <li>Light Left Shoulder</li>
-                            <li>Medium Left Shoulder</li>
-                            <li>Heavy Left Shoulder</li>
+                        <ul class="part-buttons">
+                            <li><button class="part-option">Light Left Shoulder</button></li>
+                            <li><button class="part-option">Medium Left Shoulder</button></li>
+                            <li><button class="part-option">Heavy Left Shoulder</button></li>
                         </ul>
                     </details>
                     <details>
                         <summary>Right Shoulder</summary>
-                        <ul>
-                            <li>Light Right Shoulder</li>
-                            <li>Medium Right Shoulder</li>
-                            <li>Heavy Right Shoulder</li>
+                        <ul class="part-buttons">
+                            <li><button class="part-option">Light Right Shoulder</button></li>
+                            <li><button class="part-option">Medium Right Shoulder</button></li>
+                            <li><button class="part-option">Heavy Right Shoulder</button></li>
                         </ul>
                     </details>
                     <details>
                         <summary>Left Hand</summary>
-                        <ul>
-                            <li>Shotgun</li>
-                            <li>Sword</li>
-                            <li>Machine Gun</li>
-                            <li>Sub-Machine Gun</li>
-                            <li>Heavy Machine Gun</li>
-                            <li>Rocket Launcher</li>
-                            <li>Plasma Cannon</li>
-                            <li>Sniper Rifle</li>
+                        <ul class="part-buttons">
+                            <li><button class="part-option">Shotgun</button></li>
+                            <li><button class="part-option">Sword</button></li>
+                            <li><button class="part-option">Machine Gun</button></li>
+                            <li><button class="part-option">Sub-Machine Gun</button></li>
+                            <li><button class="part-option">Heavy Machine Gun</button></li>
+                            <li><button class="part-option">Rocket Launcher</button></li>
+                            <li><button class="part-option">Plasma Cannon</button></li>
+                            <li><button class="part-option">Sniper Rifle</button></li>
                         </ul>
                     </details>
                     <details>
                         <summary>Right Hand</summary>
-                        <ul>
-                            <li>Shotgun</li>
-                            <li>Sword</li>
-                            <li>Machine Gun</li>
-                            <li>Sub-Machine Gun</li>
-                            <li>Heavy Machine Gun</li>
-                            <li>Rocket Launcher</li>
-                            <li>Plasma Cannon</li>
-                            <li>Grenade Launcher</li>
+                        <ul class="part-buttons">
+                            <li><button class="part-option">Shotgun</button></li>
+                            <li><button class="part-option">Sword</button></li>
+                            <li><button class="part-option">Machine Gun</button></li>
+                            <li><button class="part-option">Sub-Machine Gun</button></li>
+                            <li><button class="part-option">Heavy Machine Gun</button></li>
+                            <li><button class="part-option">Rocket Launcher</button></li>
+                            <li><button class="part-option">Plasma Cannon</button></li>
+                            <li><button class="part-option">Grenade Launcher</button></li>
                         </ul>
                     </details>
                     <details>
                         <summary>Legs</summary>
-                        <ul>
-                            <li>Medium Legs</li>
-                            <li>Reverse Joint</li>
-                            <li>Heavy Legs</li>
-                            <li>Quad Legs</li>
+                        <ul class="part-buttons">
+                            <li><button class="part-option">Medium Legs</button></li>
+                            <li><button class="part-option">Reverse Joint</button></li>
+                            <li><button class="part-option">Heavy Legs</button></li>
+                            <li><button class="part-option">Quad Legs</button></li>
                         </ul>
                     </details>
                     <details>
                         <summary>Body</summary>
-                        <ul>
-                            <li>Light Body</li>
-                            <li>Medium Body</li>
-                            <li>Heavy Body</li>
+                        <ul class="part-buttons">
+                            <li><button class="part-option">Light Body</button></li>
+                            <li><button class="part-option">Medium Body</button></li>
+                            <li><button class="part-option">Heavy Body</button></li>
                         </ul>
                     </details>
                     <details>
                         <summary>Core</summary>
-                        <ul>
-                            <li>Energy Core</li>
-                            <li>Fusion Core</li>
-                            <li>Plasma Core</li>
+                        <ul class="part-buttons">
+                            <li><button class="part-option">Energy Core</button></li>
+                            <li><button class="part-option">Fusion Core</button></li>
+                            <li><button class="part-option">Plasma Core</button></li>
                         </ul>
                     </details>
                 </div>
             </td>
             <td width="33%" align="center" valign="top">
-                <div style="border: 1px solid #999; padding: 10px; width: 200px; display: inline-block;">Overview</div>
+                <div class="section-header">Overview</div>
                 <br><br>
                 <div>
                     <!-- Head -->
-                    <div style="border: 1px solid #999; width: 80px; height: 80px; display: inline-block; margin: 5px;"></div>
+                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
                     <br>
                     <!-- Left Shoulder, Body, Right Shoulder -->
-                    <div style="border: 1px solid #999; width: 80px; height: 80px; display: inline-block; margin: 5px;"></div>
-                    <div style="border: 1px solid #999; width: 80px; height: 80px; display: inline-block; margin: 5px;"></div>
-                    <div style="border: 1px solid #999; width: 80px; height: 80px; display: inline-block; margin: 5px;"></div>
+                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
+                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
+                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
                     <br>
                     <!-- Left Hand, Core, Right Hand -->
-                    <div style="border: 1px solid #999; width: 60px; height: 80px; display: inline-block; margin: 5px;"></div>
-                    <div style="border: 1px solid #999; width: 80px; height: 80px; display: inline-block; margin: 5px;"></div>
-                    <div style="border: 1px solid #999; width: 60px; height: 80px; display: inline-block; margin: 5px;"></div>
+                    <div class="mech-box" style="width: 60px; height: 80px;"></div>
+                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
+                    <div class="mech-box" style="width: 60px; height: 80px;"></div>
                     <br>
                     <!-- Legs -->
-                    <div style="border: 1px solid #999; width: 80px; height: 80px; display: inline-block; margin: 5px;"></div>
+                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
                 </div> 
             </td>
             <td width="33%" align="center" valign="top">
-                <div style="border: 1px solid #999; padding: 10px; width: 200px; display: inline-block;">Statistics</div>
+                <div class="section-header">Statistics</div>
                 <br><br>
-                <table border="1" cellpadding="5" style="border-collapse: collapse;">
+                <table class="stats-table">
                     <tr>
                         <td>Attack</td>
-                        <td>This data will be filled from database</td>
+                        <td>0</td>
                     </tr>
                     <tr>
                         <td>Armor</td>
-                        <td></td>
+                        <td>0</td>
                     </tr>
                     <tr>
                         <td>Speed</td>
-                        <td></td>
+                        <td>0</td>
                     </tr>
                     <tr>
                         <td>Weight</td>
-                        <td></td>
+                        <td>0</td>
+                    </tr>
+                </table>
             </td>
         </tr>
     </table>
@@ -143,9 +145,8 @@
         <br><br>
         <button id="saveMech" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">Save Mech Sheet</button>
     </div>
-    </table>
     <hr>
-    <footer style="text-align: center; padding: 20px; font-size: 12px; color: #666;">
+    <footer>
         <p>Author: Bennet Hill. To see the full check out my repo: <a href="https://github.com/Toadhini/Mech_Designer_Startup">GitHub repository</a></p>
     </footer>
 </body>
