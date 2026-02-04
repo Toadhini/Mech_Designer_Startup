@@ -66,6 +66,9 @@ part-option {
 I think it would be nice to have a photo perhaps of something mech related to give it some more styling. At least a more "Mechanic" font to help push the theme of the page.
 I think I want to base it similar to the Amored Core 6 part store / garage. Adding a line to seperate the parts list from the others and a background would help with the styling of it and help make it look less like its original html styling
 
+I didnt use bootstrap until now and I am a fool
+
+
 ## React Part 1: Routing
 
 Setting up Vite and React was pretty simple. I had a bit of trouble because of conflicting CSS. This isn't as straight forward as you would find with Svelte or Vue, but I made it work in the end. If there was a ton of CSS it would be a real problem. It sure was nice to have the code structured in a more usable way.
