@@ -68,6 +68,7 @@ I think I want to base it similar to the Amored Core 6 part store / garage. Addi
 
 I didnt use bootstrap until now and I am a fool
 
+Had to look up a lot more information regarding on how to actually implement bootstrap into what I have but it was not too hard, just lost of reformatting and renaming
 
 ## React Part 1: Routing
 

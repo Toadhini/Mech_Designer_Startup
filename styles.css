@@ -1,21 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
 
-/* Apply custom font globally */
+/* Force global font */
+* {
+    font-family: 'Orbitron', sans-serif !important;
+}
+
 body {
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, #a4bce4 0%, #2a5298 25%, #a4bce4 100%);
+    font-family: 'Orbitron', sans-serif !important;
+    background: linear-gradient(135deg, #a4bce4 0%, #2a5298 25%, #a4bce4 100%) !important;
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
-/* Custom navbar styling */
+/* Navigation bar styling */
+.navbar {
+    background-color: rgba(248, 249, 250, 0.95) !important;
+}
+
 .navbar-brand {
-    font-weight: 700;
+    font-weight: 700 !important;
     color: #0066cc !important;
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 .nav-link {
-    font-weight: 500;
+    font-weight: 500 !important;
     color: #0066cc !important;
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 .nav-link:hover {
@@ -24,33 +35,67 @@ body {
 
 /* Custom button styling */
 .btn-primary {
-    background-color: #0066cc;
-    border-color: #0066cc;
-    font-weight: 500;
+    background-color: #0066cc !important;
+    border-color: #0066cc !important;
+    font-weight: 500 !important;
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 .btn-primary:hover {
-    background-color: #0052a3;
-    border-color: #0052a3;
+    background-color: #0052a3 !important;
+    border-color: #0052a3 !important;
+}
+
+.btn, button {
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 /* Card customization */
 .card {
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.card-header, .card-body, .card-title, .card-text {
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+/* Form elements */
+.form-control, .form-label, input, label {
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .display-5 {
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+/* Accordion for parts */
+.accordion-button {
+    font-family: 'Orbitron', sans-serif !important;
+}
+
+.accordion-body {
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 /* Footer styling */
 .footer {
-    background-color: rgba(255, 255, 255, 0.9) !important;
+    background-color: rgba(248, 249, 250, 0.9) !important;
 }
 
 .footer a {
     color: #0066cc;
     text-decoration: none;
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+.footer p, .footer .text-muted {
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 /* Mech Sheet Specific Styles */
@@ -71,26 +116,26 @@ body {
     width: 100%;
     text-align: left;
     padding: 8px 12px;
-    background-color: #666;
-    color: white;
+    background-color: #666 !important;
+    color: white !important;
     border: 1px solid #999;
     cursor: pointer;
-    font-family: 'Orbitron', Arial, sans-serif;
+    font-family: 'Orbitron', Arial, sans-serif !important;
     font-size: 12px;
     border-radius: 4px;
     transition: all 0.3s ease;
 }
 
 .part-option:hover {
-    background-color: white;
-    color: #0066cc;
+    background-color: white !important;
+    color: #0066cc !important;
     border-color: #0052a3;
     transform: translateY(-2px);
 }
 
 .part-option:active {
-    background-color: #0066cc;
-    color: white;
+    background-color: #0066cc !important;
+    color: white !important;
 }
 
 .mech-box {
@@ -111,11 +156,17 @@ body {
 .stats-table td {
     border: 1px solid #999;
     padding: 10px;
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 .stats-table tr:first-child td {
     background-color: #f8f9fa;
     font-weight: 600;
+}
+
+/* All Bootstrap tables */
+.table, .table td, .table th {
+    font-family: 'Orbitron', sans-serif !important;
 }
 
 /* Browse page mech cards */
