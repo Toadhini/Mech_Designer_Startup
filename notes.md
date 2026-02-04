@@ -70,6 +70,8 @@ I didnt use bootstrap until now and I am a fool
 
 Had to look up a lot more information regarding on how to actually implement bootstrap into what I have but it was not too hard, just lost of reformatting and renaming
 
+Ater a lot of research and looking at other css implementations online I was able to get a better understanding and worked around my existing code deleting and changing what needed to be even experimenting a little with the "bounce" of the browse page when you hove over one
+
 ## React Part 1: Routing
 
 Setting up Vite and React was pretty simple. I had a bit of trouble because of conflicting CSS. This isn't as straight forward as you would find with Svelte or Vue, but I made it work in the end. If there was a ton of CSS it would be a real problem. It sure was nice to have the code structured in a more usable way.
