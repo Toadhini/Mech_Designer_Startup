@@ -1,158 +1,292 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mech Sheet Creator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="browse.html">Browse Mech Sheets</a>
-    </div>
-    <hr>
-    <table width="100%" cellpadding="10">
-        <tr>
-            <td width="33%" align="center" valign="top" class="parts-column">
-                <div class="section-header">Part List</div>
-                <br><br>
-                <div class="parts-list">
-                    <details>
-                        <summary>Head</summary>
-                        <ul class="part-buttons">
-                            <li><button class="part-option">Light Head</button></li>
-                            <li><button class="part-option">Medium Head</button></li>
-                            <li><button class="part-option">Heavy Head</button></li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary>Left Shoulder</summary>
-                        <ul class="part-buttons">
-                            <li><button class="part-option">Light Left Shoulder</button></li>
-                            <li><button class="part-option">Medium Left Shoulder</button></li>
-                            <li><button class="part-option">Heavy Left Shoulder</button></li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary>Right Shoulder</summary>
-                        <ul class="part-buttons">
-                            <li><button class="part-option">Light Right Shoulder</button></li>
-                            <li><button class="part-option">Medium Right Shoulder</button></li>
-                            <li><button class="part-option">Heavy Right Shoulder</button></li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary>Left Hand</summary>
-                        <ul class="part-buttons">
-                            <li><button class="part-option">Shotgun</button></li>
-                            <li><button class="part-option">Sword</button></li>
-                            <li><button class="part-option">Machine Gun</button></li>
-                            <li><button class="part-option">Sub-Machine Gun</button></li>
-                            <li><button class="part-option">Heavy Machine Gun</button></li>
-                            <li><button class="part-option">Rocket Launcher</button></li>
-                            <li><button class="part-option">Plasma Cannon</button></li>
-                            <li><button class="part-option">Sniper Rifle</button></li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary>Right Hand</summary>
-                        <ul class="part-buttons">
-                            <li><button class="part-option">Shotgun</button></li>
-                            <li><button class="part-option">Sword</button></li>
-                            <li><button class="part-option">Machine Gun</button></li>
-                            <li><button class="part-option">Sub-Machine Gun</button></li>
-                            <li><button class="part-option">Heavy Machine Gun</button></li>
-                            <li><button class="part-option">Rocket Launcher</button></li>
-                            <li><button class="part-option">Plasma Cannon</button></li>
-                            <li><button class="part-option">Grenade Launcher</button></li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary>Legs</summary>
-                        <ul class="part-buttons">
-                            <li><button class="part-option">Medium Legs</button></li>
-                            <li><button class="part-option">Reverse Joint</button></li>
-                            <li><button class="part-option">Heavy Legs</button></li>
-                            <li><button class="part-option">Quad Legs</button></li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary>Body</summary>
-                        <ul class="part-buttons">
-                            <li><button class="part-option">Light Body</button></li>
-                            <li><button class="part-option">Medium Body</button></li>
-                            <li><button class="part-option">Heavy Body</button></li>
-                        </ul>
-                    </details>
-                    <details>
-                        <summary>Core</summary>
-                        <ul class="part-buttons">
-                            <li><button class="part-option">Energy Core</button></li>
-                            <li><button class="part-option">Fusion Core</button></li>
-                            <li><button class="part-option">Plasma Core</button></li>
-                        </ul>
-                    </details>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Mech Designer</a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="browse.html">Browse Mech Sheets</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+            <!-- Left Column: Part List -->
+            <div class="col-lg-4 col-md-12">
+                <div class="card shadow">
+                    <div class="card-header text-center section-header">
+                        Part List
+                    </div>
+                    <div class="card-body parts-list">
+                        <!-- Head -->
+                        <div class="accordion accordion-flush" id="partsAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#headParts">
+                                        Head
+                                    </button>
+                                </h2>
+                                <div id="headParts" class="accordion-collapse collapse" data-bs-parent="#partsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-grid gap-2">
+                                            <button class="part-option">Light Head</button>
+                                            <button class="part-option">Medium Head</button>
+                                            <button class="part-option">Heavy Head</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Left Shoulder -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#leftShoulder">
+                                        Left Shoulder
+                                    </button>
+                                </h2>
+                                <div id="leftShoulder" class="accordion-collapse collapse" data-bs-parent="#partsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-grid gap-2">
+                                            <button class="part-option">Light Left Shoulder</button>
+                                            <button class="part-option">Medium Left Shoulder</button>
+                                            <button class="part-option">Heavy Left Shoulder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Shoulder -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rightShoulder">
+                                        Right Shoulder
+                                    </button>
+                                </h2>
+                                <div id="rightShoulder" class="accordion-collapse collapse" data-bs-parent="#partsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-grid gap-2">
+                                            <button class="part-option">Light Right Shoulder</button>
+                                            <button class="part-option">Medium Right Shoulder</button>
+                                            <button class="part-option">Heavy Right Shoulder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Left Hand -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#leftHand">
+                                        Left Hand
+                                    </button>
+                                </h2>
+                                <div id="leftHand" class="accordion-collapse collapse" data-bs-parent="#partsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-grid gap-2">
+                                            <button class="part-option">Shotgun</button>
+                                            <button class="part-option">Sword</button>
+                                            <button class="part-option">Machine Gun</button>
+                                            <button class="part-option">Sub-Machine Gun</button>
+                                            <button class="part-option">Heavy Machine Gun</button>
+                                            <button class="part-option">Rocket Launcher</button>
+                                            <button class="part-option">Plasma Cannon</button>
+                                            <button class="part-option">Sniper Rifle</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Hand -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rightHand">
+                                        Right Hand
+                                    </button>
+                                </h2>
+                                <div id="rightHand" class="accordion-collapse collapse" data-bs-parent="#partsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-grid gap-2">
+                                            <button class="part-option">Shotgun</button>
+                                            <button class="part-option">Sword</button>
+                                            <button class="part-option">Machine Gun</button>
+                                            <button class="part-option">Sub-Machine Gun</button>
+                                            <button class="part-option">Heavy Machine Gun</button>
+                                            <button class="part-option">Rocket Launcher</button>
+                                            <button class="part-option">Plasma Cannon</button>
+                                            <button class="part-option">Grenade Launcher</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Legs -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legs">
+                                        Legs
+                                    </button>
+                                </h2>
+                                <div id="legs" class="accordion-collapse collapse" data-bs-parent="#partsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-grid gap-2">
+                                            <button class="part-option">Medium Legs</button>
+                                            <button class="part-option">Reverse Joint</button>
+                                            <button class="part-option">Heavy Legs</button>
+                                            <button class="part-option">Quad Legs</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#body">
+                                        Body
+                                    </button>
+                                </h2>
+                                <div id="body" class="accordion-collapse collapse" data-bs-parent="#partsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-grid gap-2">
+                                            <button class="part-option">Light Body</button>
+                                            <button class="part-option">Medium Body</button>
+                                            <button class="part-option">Heavy Body</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Core -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#core">
+                                        Core
+                                    </button>
+                                </h2>
+                                <div id="core" class="accordion-collapse collapse" data-bs-parent="#partsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-grid gap-2">
+                                            <button class="part-option">Energy Core</button>
+                                            <button class="part-option">Fusion Core</button>
+                                            <button class="part-option">Plasma Core</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </td>
-            <td width="33%" align="center" valign="top">
-                <div class="section-header">Overview</div>
-                <br><br>
-                <div>
-                    <!-- Head -->
-                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
-                    <br>
-                    <!-- Left Shoulder, Body, Right Shoulder -->
-                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
-                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
-                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
-                    <br>
-                    <!-- Left Hand, Core, Right Hand -->
-                    <div class="mech-box" style="width: 60px; height: 80px;"></div>
-                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
-                    <div class="mech-box" style="width: 60px; height: 80px;"></div>
-                    <br>
-                    <!-- Legs -->
-                    <div class="mech-box" style="width: 80px; height: 80px;"></div>
-                </div> 
-            </td>
-            <td width="33%" align="center" valign="top">
-                <div class="section-header">Statistics</div>
-                <br><br>
-                <table class="stats-table">
-                    <tr>
-                        <td>Attack</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Armor</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Speed</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Weight</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Energy</td>
-                        <td>0</td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-    <hr>
-    <div style="text-align: center; padding: 20px;">
-        <label for="mechName" style="font-weight: bold; margin-right: 10px;">Mech Name:</label>
-        <input type="text" id="mechName" name="mechName" style="padding: 5px; width: 300px; font-size: 14px;">
-        <br><br>
-        <button id="saveMech" style="padding: 10px 30px; font-size: 16px; cursor: pointer;">Save Mech Sheet</button>
+            </div>
+
+            <!-- Middle Column: Mech Overview -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center section-header">
+                        Overview
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex flex-column align-items-center gap-2">
+                            <!-- Head -->
+                            <div class="mech-box" style="width: 80px; height: 80px;"></div>
+                            
+                            <!-- Shoulders and Body Row -->
+                            <div class="d-flex gap-2">
+                                <div class="mech-box" style="width: 80px; height: 80px;"></div>
+                                <div class="mech-box" style="width: 80px; height: 80px;"></div>
+                                <div class="mech-box" style="width: 80px; height: 80px;"></div>
+                            </div>
+                            
+                            <!-- Hands and Core Row -->
+                            <div class="d-flex gap-2">
+                                <div class="mech-box" style="width: 60px; height: 80px;"></div>
+                                <div class="mech-box" style="width: 80px; height: 80px;"></div>
+                                <div class="mech-box" style="width: 60px; height: 80px;"></div>
+                            </div>
+                            
+                            <!-- Legs -->
+                            <div class="mech-box" style="width: 80px; height: 80px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Statistics -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center section-header">
+                        Statistics
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered stats-table">
+                            <tbody>
+                                <tr>
+                                    <td>Attack</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Armor</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Speed</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Energy</td>
+                                    <td>0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Save Section -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <label for="mechName" class="form-label fw-bold">Mech Name:</label>
+                                <input type="text" class="form-control" id="mechName" placeholder="Enter your mech name">
+                            </div>
+                            <div class="col-md-4 text-end mt-3 mt-md-0">
+                                <button id="saveMech" class="btn btn-primary btn-lg w-100">Save Mech Sheet</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <hr>
-    <footer>
-        <p>Author: Bennet Hill. To see the full check out my repo: <a href="https://github.com/Toadhini/Mech_Designer_Startup">GitHub repository</a></p>
+
+    <!-- Footer -->
+    <footer class="footer mt-4 py-3 bg-light">
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                Author: Bennet Hill. To see the full project, check out my 
+                <a href="https://github.com/Toadhini/Mech_Designer_Startup" target="_blank">GitHub repository</a>
+            </p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
