@@ -16,9 +16,6 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Toadhini/Mech_Designer_Startup/issues"
-  },
   "homepage": "https://github.com/Toadhini/Mech_Designer_Startup#readme",
   "devDependencies": {
     "vite": "^7.3.1"
