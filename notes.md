@@ -74,7 +74,9 @@ Ater a lot of research and looking at other css implementations online I was abl
 
 ## React Part 1: Routing
 
-Setting up Vite and React was pretty simple. I had a bit of trouble because of conflicting CSS. This isn't as straight forward as you would find with Svelte or Vue, but I made it work in the end. If there was a ton of CSS it would be a real problem. It sure was nice to have the code structured in a more usable way.
+Setting up and downloading Vite and React was easy enough. Watched the video a few times to get a better understanding on how to take the main part of the html file and then transfer it into the new .jsx file. 
+Had quite a few issues with certain styling and naming issues in .html files but took a few google searches and references and got everything sorted out.
+Not a bad part, just takes a little research and adjustments and came together.
 
 ## React Part 2: Reactivity
 
