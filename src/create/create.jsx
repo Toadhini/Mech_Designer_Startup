@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Create() {
+export function Create() {
     return (
         <main className="container-fluid py-4">
         <div className="row g-4">
@@ -169,21 +169,21 @@ function Create() {
                     </div>
                     <div className="card-body">
                         <div className="d-flex flex-column align-items-center gap-2">
-                            <div className="mech-box" style="width: 80px; height: 80px;"></div>
+                            <div className="mech-box" style={{width: "80px", height: "80px"}}></div>
                             
                             <div className="d-flex gap-2">
-                                <div className="mech-box" style="width: 80px; height: 80px;"></div>
-                                <div className="mech-box" style="width: 80px; height: 80px;"></div>
-                                <div className="mech-box" style="width: 80px; height: 80px;"></div>
+                                <div className="mech-box" style={{width: "80px", height: "80px"}}></div>
+                                <div className="mech-box" style={{width: "80px", height: "80px"}}></div>
+                                <div className="mech-box" style={{width: "80px", height: "80px"}}></div>
                             </div>
                             
                             <div className="d-flex gap-2">
-                                <div className="mech-box" style="width: 60px; height: 80px;"></div>
-                                <div className="mech-box" style="width: 80px; height: 80px;"></div>
-                                <div className="mech-box" style="width: 60px; height: 80px;"></div>
+                                <div className="mech-box" style={{width: "60px", height: "80px"}}></div>
+                                <div className="mech-box" style={{width: "80px", height: "80px"}}></div>
+                                <div className="mech-box" style={{width: "60px", height: "80px"}}></div>
                             </div>
                             
-                            <div className="mech-box" style="width: 80px; height: 80px;"></div>
+                            <div className="mech-box" style={{width: "80px", height: "80px"}}></div>
                         </div>
                     </div>
                 </div>
@@ -230,8 +230,8 @@ function Create() {
                     <div className="card-body">
                         <div className="row align-items-center">
                             <div className="col-md-8">
-                                <label for="mechName" className="form-label fw-bold">Mech Name:</label>
-                                <input type="text" className="form-control" id="mechName" placeholder="Enter your mech name"/>
+                                <label htmlFor="mechName" className="form-label fw-bold">Mech Name:</label>
+                                <input type="text" className="form-control" id="mechName" placeholder="Enter your mech name" />
                             </div>
                             <div className="col-md-4 text-end mt-3 mt-md-0">
                                 <button id="saveMech" className="btn btn-primary btn-lg w-100">Save Mech Sheet</button>
