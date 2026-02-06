@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./app.css";
+import "."
 
 export default function App() {
   return( 
@@ -15,7 +16,11 @@ export default function App() {
       </div>
     </nav>
 
-    
+    <main className="container">
+      <div className="py-5 text-center">Apps go here
+      </div>
+    </main>
+
     <footer className="footer mt-auto py-3 bg-light">
       <div className="container text-center">
         <p className="text-muted mb-0">
