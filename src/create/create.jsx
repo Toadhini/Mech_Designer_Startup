@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
 export function Create() {
+    // State for selected parts
+    const [selectedParts, setSelectedParts] = useState({
+    });
     return (
         <main className="container-fluid py-4">
         <div className="row g-4">
