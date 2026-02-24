@@ -12,7 +12,12 @@ export function Create() {
         body: '',
         core: ''
     });
-    return (
+
+    // Handler for part selection
+    const handleSelect = (partType, partName) => {
+        setSelectedParts(prev => ({ ...prev, [partType]: partName }));
+    };
+    
         <main className="container-fluid py-4">
         <div className="row g-4">
             <div className="col-lg-4 col-md-12">
@@ -253,5 +258,5 @@ export function Create() {
             </div>
         </div>
     </main>
-    )
+
 }
