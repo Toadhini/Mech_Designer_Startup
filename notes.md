@@ -82,6 +82,7 @@ Not a bad part, just takes a little research and adjustments and came together.
 
 My focus for this part is to make sure that obviously everything works but as well is cohesive and flows together. My biggest fear is the process of clicking and having things move around but with some time should not be too bad.
 
+Successfull deployment of Simon final React code
 
 ## Helpful Links
 
