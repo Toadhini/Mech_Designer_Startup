@@ -3,6 +3,14 @@ import React, { useState } from 'react';
 export function Create() {
     // State for selected parts
     const [selectedParts, setSelectedParts] = useState({
+        head: '',
+        leftShoulder: '',
+        rightShoulder: '',
+        leftHand: '',
+        rightHand: '',
+        legs: '',
+        body: '',
+        core: ''
     });
     return (
         <main className="container-fluid py-4">
