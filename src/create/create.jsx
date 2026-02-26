@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { calculateTotalStats } from "../data/partsData";
 
 export function Create() {
   // State for selected parts
@@ -17,6 +18,9 @@ export function Create() {
   const handleSelect = (partType, partName) => {
     setSelectedParts((prev) => ({ ...prev, [partType]: partName }));
   };
+
+  // Calculate total stats from selected parts
+  const totalStats = calculateTotalStats(selectedParts);
 
   return (
     <main className="container-fluid py-4">
@@ -379,23 +383,23 @@ export function Create() {
                 <tbody>
                   <tr>
                     <td>Attack</td>
-                    <td>0</td>
+                    <td>{totalStats.attack}</td>
                   </tr>
                   <tr>
                     <td>Armor</td>
-                    <td>0</td>
+                    <td>{totalStats.armor}</td>
                   </tr>
                   <tr>
                     <td>Speed</td>
-                    <td>0</td>
+                    <td>{totalStats.speed}</td>
                   </tr>
                   <tr>
                     <td>Weight</td>
-                    <td>0</td>
+                    <td>{totalStats.weight}</td>
                   </tr>
                   <tr>
                     <td>Energy</td>
-                    <td>0</td>
+                    <td>{totalStats.energy}</td>
                   </tr>
                 </tbody>
               </table>
