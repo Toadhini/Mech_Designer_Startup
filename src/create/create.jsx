@@ -225,33 +225,6 @@ export function Create() {
                       className="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#legs"
-                    >
-                      Legs
-                    </button>
-                  </h2>
-                  <div
-                    id="legs"
-                    className="accordion-collapse collapse"
-                    data-bs-parent="#partsAccordion"
-                  >
-                    <div className="accordion-body">
-                      <div className="d-grid gap-2">
-                        <button className={`part-option ${selectedParts.legs === "Medium Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Medium Legs")}>Medium Legs</button>
-                        <button className={`part-option ${selectedParts.legs === "Reverse Joint" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Reverse Joint")}>Reverse Joint</button>
-                        <button className={`part-option ${selectedParts.legs === "Heavy Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Heavy Legs")}>Heavy Legs</button>
-                        <button className={`part-option ${selectedParts.legs === "Quad Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Quad Legs")}>Quad Legs</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="accordion-item">
-                  <h2 className="accordion-header">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
                       data-bs-target="#body"
                     >
                       Body
@@ -293,6 +266,33 @@ export function Create() {
                         <button className={`part-option ${selectedParts.core === "Energy Core" ? "selected" : ""}`} onClick={() => handleSelect("core", "Energy Core")}>Energy Core</button>
                         <button className={`part-option ${selectedParts.core === "Fusion Core" ? "selected" : ""}`} onClick={() => handleSelect("core", "Fusion Core")}>Fusion Core</button>
                         <button className={`part-option ${selectedParts.core === "Plasma Core" ? "selected" : ""}`} onClick={() => handleSelect("core", "Plasma Core")}>Plasma Core</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="accordion-item">
+                  <h2 className="accordion-header">
+                    <button
+                      className="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#legs"
+                    >
+                      Legs
+                    </button>
+                  </h2>
+                  <div
+                    id="legs"
+                    className="accordion-collapse collapse"
+                    data-bs-parent="#partsAccordion"
+                  >
+                    <div className="accordion-body">
+                      <div className="d-grid gap-2">
+                        <button className={`part-option ${selectedParts.legs === "Medium Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Medium Legs")}>Medium Legs</button>
+                        <button className={`part-option ${selectedParts.legs === "Reverse Joint" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Reverse Joint")}>Reverse Joint</button>
+                        <button className={`part-option ${selectedParts.legs === "Heavy Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Heavy Legs")}>Heavy Legs</button>
+                        <button className={`part-option ${selectedParts.legs === "Quad Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Quad Legs")}>Quad Legs</button>
                       </div>
                     </div>
                   </div>
