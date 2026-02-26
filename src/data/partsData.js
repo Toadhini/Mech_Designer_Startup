@@ -15,7 +15,7 @@ export const partsData = {
     { name: "Heavy Right Shoulder", attack: 0, armor: 20, speed: 5, weight: 35, energy: 15 },
   ],
   leftHand: [
-    { name: "Shotgun", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
+    { name: "Shotgun", attack: 20, armor: 0, speed: 15, weight: 20, energy: 10 },
     { name: "Sword", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
     { name: "Machine Gun", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
     { name: "Sub-Machine Gun", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
@@ -25,7 +25,7 @@ export const partsData = {
     { name: "Sniper Rifle", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
   ],
   rightHand: [
-    { name: "Shotgun", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
+    { name: "Shotgun", attack: 20, armor: 0, speed: 15, weight: 20, energy: 10 },
     { name: "Sword", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
     { name: "Machine Gun", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
     { name: "Sub-Machine Gun", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
@@ -35,16 +35,17 @@ export const partsData = {
     { name: "Grenade Launcher", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
   ],
   body: [
-    { name: "Light Body", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Medium Body", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Heavy Body", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
+    { name: "Light Body", attack: 0, armor: 25, speed: 25, weight: 25, energy: 15 },
+    { name: "Medium Body", attack: 0, armor: 35, speed: 20, weight: 35, energy: 25 },
+    { name: "Heavy Body", attack: 0, armor: 50, speed: 10, weight: 50, energy: 30 },
   ],
   core: [
-    { name: "Energy Core", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Fusion Core", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Plasma Core", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
+    { name: "Energy Core", attack: 0, armor: 0, speed: 10, weight: 15, energy: 10 },
+    { name: "Fusion Core", attack: 0, armor: 0, speed: 20, weight: 20, energy: 25 },
+    { name: "Plasma Core", attack: 0, armor: 0, speed: 30, weight: 20, energy: 40 },
   ],
   legs: [
+    { name: "Light Legs", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
     { name: "Medium Legs", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
     { name: "Reverse Joint", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
     { name: "Heavy Legs", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },

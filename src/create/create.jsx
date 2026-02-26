@@ -293,6 +293,7 @@ export function Create() {
                   >
                     <div className="accordion-body">
                       <div className="d-grid gap-2">
+                        <button className={`part-option ${selectedParts.legs === "Light Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Light Legs")}>Light Legs</button>
                         <button className={`part-option ${selectedParts.legs === "Medium Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Medium Legs")}>Medium Legs</button>
                         <button className={`part-option ${selectedParts.legs === "Reverse Joint" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Reverse Joint")}>Reverse Joint</button>
                         <button className={`part-option ${selectedParts.legs === "Heavy Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Heavy Legs")}>Heavy Legs</button>
