@@ -37,13 +37,10 @@ export function Login() {
       }
       localStorage.setItem("currentUser", username);
       setCurrentUser(username);
-      alert(`Account created for ${username}!`);
     } else {
       localStorage.setItem("currentUser", username);
       setCurrentUser(username);
     }
-
-    navigate("/create");
   };
 
   const handleLogout = () => {
