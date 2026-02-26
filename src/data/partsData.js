@@ -1,18 +1,18 @@
 export const partsData = {
   head: [
-    { name: "Light Head", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Medium Head", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Heavy Head", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
+    { name: "Light Head", attack: 0, armor: 5, speed: 20, weight: 15, energy: 10 },
+    { name: "Medium Head", attack: 0, armor: 12, speed: 10, weight: 25, energy: 12 },
+    { name: "Heavy Head", attack: 0, armor: 20, speed: 5, weight: 35, energy: 15 },
   ],
   leftShoulder: [
-    { name: "Light Left Shoulder", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Medium Left Shoulder", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Heavy Left Shoulder", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
+    { name: "Light Left Shoulder", attack: 0, armor: 5, speed: 20, weight: 15, energy: 10 },
+    { name: "Medium Left Shoulder", attack: 0, armor: 12, speed: 10, weight: 25, energy: 12 },
+    { name: "Heavy Left Shoulder", attack: 0, armor: 20, speed: 5, weight: 35, energy: 15 },
   ],
   rightShoulder: [
-    { name: "Light Right Shoulder", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Medium Right Shoulder", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
-    { name: "Heavy Right Shoulder", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
+    { name: "Light Right Shoulder", attack: 0, armor: 5, speed: 20, weight: 15, energy: 10 },
+    { name: "Medium Right Shoulder", attack: 0, armor: 12, speed: 10, weight: 25, energy: 12 },
+    { name: "Heavy Right Shoulder", attack: 0, armor: 20, speed: 5, weight: 35, energy: 15 },
   ],
   leftHand: [
     { name: "Shotgun", attack: 0, armor: 0, speed: 0, weight: 0, energy: 0 },
