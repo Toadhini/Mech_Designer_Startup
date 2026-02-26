@@ -47,19 +47,19 @@ export function Create() {
                     <div className="accordion-body">
                       <div className="d-grid gap-2">
                         <button
-                          className="part-option"
+                          className={`part-option ${selectedParts.head === "Light Head" ? "selected" : ""}`}
                           onClick={() => handleSelect("head", "Light Head")}
                         >
                           Light Head
                         </button>
                         <button
-                          className="part-option"
+                          className={`part-option ${selectedParts.head === "Medium Head" ? "selected" : ""}`}
                           onClick={() => handleSelect("head", "Medium Head")}
                         >
                           Medium Head
                         </button>
                         <button
-                          className="part-option"
+                          className={`part-option ${selectedParts.head === "Heavy Head" ? "selected" : ""}`}
                           onClick={() => handleSelect("head", "Heavy Head")}
                         >
                           Heavy Head
@@ -87,13 +87,22 @@ export function Create() {
                   >
                     <div className="accordion-body">
                       <div className="d-grid gap-2">
-                        <button className="part-option">
+                        <button
+                          className={`part-option ${selectedParts.leftShoulder === "Light Left Shoulder" ? "selected" : ""}`}
+                          onClick={() => handleSelect("leftShoulder", "Light Left Shoulder")}
+                        >
                           Light Left Shoulder
                         </button>
-                        <button className="part-option">
+                        <button
+                          className={`part-option ${selectedParts.leftShoulder === "Medium Left Shoulder" ? "selected" : ""}`}
+                          onClick={() => handleSelect("leftShoulder", "Medium Left Shoulder")}
+                        >
                           Medium Left Shoulder
                         </button>
-                        <button className="part-option">
+                        <button
+                          className={`part-option ${selectedParts.leftShoulder === "Heavy Left Shoulder" ? "selected" : ""}`}
+                          onClick={() => handleSelect("leftShoulder", "Heavy Left Shoulder")}
+                        >
                           Heavy Left Shoulder
                         </button>
                       </div>
@@ -119,13 +128,22 @@ export function Create() {
                   >
                     <div className="accordion-body">
                       <div className="d-grid gap-2">
-                        <button className="part-option">
+                        <button
+                          className={`part-option ${selectedParts.rightShoulder === "Light Right Shoulder" ? "selected" : ""}`}
+                          onClick={() => handleSelect("rightShoulder", "Light Right Shoulder")}
+                        >
                           Light Right Shoulder
                         </button>
-                        <button className="part-option">
+                        <button
+                          className={`part-option ${selectedParts.rightShoulder === "Medium Right Shoulder" ? "selected" : ""}`}
+                          onClick={() => handleSelect("rightShoulder", "Medium Right Shoulder")}
+                        >
                           Medium Right Shoulder
                         </button>
-                        <button className="part-option">
+                        <button
+                          className={`part-option ${selectedParts.rightShoulder === "Heavy Right Shoulder" ? "selected" : ""}`}
+                          onClick={() => handleSelect("rightShoulder", "Heavy Right Shoulder")}
+                        >
                           Heavy Right Shoulder
                         </button>
                       </div>
@@ -151,16 +169,16 @@ export function Create() {
                   >
                     <div className="accordion-body">
                       <div className="d-grid gap-2">
-                        <button className="part-option">Shotgun</button>
-                        <button className="part-option">Sword</button>
-                        <button className="part-option">Machine Gun</button>
-                        <button className="part-option">Sub-Machine Gun</button>
-                        <button className="part-option">
+                        <button className={`part-option ${selectedParts.leftHand === "Shotgun" ? "selected" : ""}`} onClick={() => handleSelect("leftHand", "Shotgun")}>Shotgun</button>
+                        <button className={`part-option ${selectedParts.leftHand === "Sword" ? "selected" : ""}`} onClick={() => handleSelect("leftHand", "Sword")}>Sword</button>
+                        <button className={`part-option ${selectedParts.leftHand === "Machine Gun" ? "selected" : ""}`} onClick={() => handleSelect("leftHand", "Machine Gun")}>Machine Gun</button>
+                        <button className={`part-option ${selectedParts.leftHand === "Sub-Machine Gun" ? "selected" : ""}`} onClick={() => handleSelect("leftHand", "Sub-Machine Gun")}>Sub-Machine Gun</button>
+                        <button className={`part-option ${selectedParts.leftHand === "Heavy Machine Gun" ? "selected" : ""}`} onClick={() => handleSelect("leftHand", "Heavy Machine Gun")}>
                           Heavy Machine Gun
                         </button>
-                        <button className="part-option">Rocket Launcher</button>
-                        <button className="part-option">Plasma Cannon</button>
-                        <button className="part-option">Sniper Rifle</button>
+                        <button className={`part-option ${selectedParts.leftHand === "Rocket Launcher" ? "selected" : ""}`} onClick={() => handleSelect("leftHand", "Rocket Launcher")}>Rocket Launcher</button>
+                        <button className={`part-option ${selectedParts.leftHand === "Plasma Cannon" ? "selected" : ""}`} onClick={() => handleSelect("leftHand", "Plasma Cannon")}>Plasma Cannon</button>
+                        <button className={`part-option ${selectedParts.leftHand === "Sniper Rifle" ? "selected" : ""}`} onClick={() => handleSelect("leftHand", "Sniper Rifle")}>Sniper Rifle</button>
                       </div>
                     </div>
                   </div>
@@ -184,16 +202,16 @@ export function Create() {
                   >
                     <div className="accordion-body">
                       <div className="d-grid gap-2">
-                        <button className="part-option">Shotgun</button>
-                        <button className="part-option">Sword</button>
-                        <button className="part-option">Machine Gun</button>
-                        <button className="part-option">Sub-Machine Gun</button>
-                        <button className="part-option">
+                        <button className={`part-option ${selectedParts.rightHand === "Shotgun" ? "selected" : ""}`} onClick={() => handleSelect("rightHand", "Shotgun")}>Shotgun</button>
+                        <button className={`part-option ${selectedParts.rightHand === "Sword" ? "selected" : ""}`} onClick={() => handleSelect("rightHand", "Sword")}>Sword</button>
+                        <button className={`part-option ${selectedParts.rightHand === "Machine Gun" ? "selected" : ""}`} onClick={() => handleSelect("rightHand", "Machine Gun")}>Machine Gun</button>
+                        <button className={`part-option ${selectedParts.rightHand === "Sub-Machine Gun" ? "selected" : ""}`} onClick={() => handleSelect("rightHand", "Sub-Machine Gun")}>Sub-Machine Gun</button>
+                        <button className={`part-option ${selectedParts.rightHand === "Heavy Machine Gun" ? "selected" : ""}`} onClick={() => handleSelect("rightHand", "Heavy Machine Gun")}>
                           Heavy Machine Gun
                         </button>
-                        <button className="part-option">Rocket Launcher</button>
-                        <button className="part-option">Plasma Cannon</button>
-                        <button className="part-option">
+                        <button className={`part-option ${selectedParts.rightHand === "Rocket Launcher" ? "selected" : ""}`} onClick={() => handleSelect("rightHand", "Rocket Launcher")}>Rocket Launcher</button>
+                        <button className={`part-option ${selectedParts.rightHand === "Plasma Cannon" ? "selected" : ""}`} onClick={() => handleSelect("rightHand", "Plasma Cannon")}>Plasma Cannon</button>
+                        <button className={`part-option ${selectedParts.rightHand === "Grenade Launcher" ? "selected" : ""}`} onClick={() => handleSelect("rightHand", "Grenade Launcher")}>
                           Grenade Launcher
                         </button>
                       </div>
@@ -219,10 +237,10 @@ export function Create() {
                   >
                     <div className="accordion-body">
                       <div className="d-grid gap-2">
-                        <button className="part-option">Medium Legs</button>
-                        <button className="part-option">Reverse Joint</button>
-                        <button className="part-option">Heavy Legs</button>
-                        <button className="part-option">Quad Legs</button>
+                        <button className={`part-option ${selectedParts.legs === "Medium Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Medium Legs")}>Medium Legs</button>
+                        <button className={`part-option ${selectedParts.legs === "Reverse Joint" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Reverse Joint")}>Reverse Joint</button>
+                        <button className={`part-option ${selectedParts.legs === "Heavy Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Heavy Legs")}>Heavy Legs</button>
+                        <button className={`part-option ${selectedParts.legs === "Quad Legs" ? "selected" : ""}`} onClick={() => handleSelect("legs", "Quad Legs")}>Quad Legs</button>
                       </div>
                     </div>
                   </div>
@@ -246,9 +264,9 @@ export function Create() {
                   >
                     <div className="accordion-body">
                       <div className="d-grid gap-2">
-                        <button className="part-option">Light Body</button>
-                        <button className="part-option">Medium Body</button>
-                        <button className="part-option">Heavy Body</button>
+                        <button className={`part-option ${selectedParts.body === "Light Body" ? "selected" : ""}`} onClick={() => handleSelect("body", "Light Body")}>Light Body</button>
+                        <button className={`part-option ${selectedParts.body === "Medium Body" ? "selected" : ""}`} onClick={() => handleSelect("body", "Medium Body")}>Medium Body</button>
+                        <button className={`part-option ${selectedParts.body === "Heavy Body" ? "selected" : ""}`} onClick={() => handleSelect("body", "Heavy Body")}>Heavy Body</button>
                       </div>
                     </div>
                   </div>
@@ -272,9 +290,9 @@ export function Create() {
                   >
                     <div className="accordion-body">
                       <div className="d-grid gap-2">
-                        <button className="part-option">Energy Core</button>
-                        <button className="part-option">Fusion Core</button>
-                        <button className="part-option">Plasma Core</button>
+                        <button className={`part-option ${selectedParts.core === "Energy Core" ? "selected" : ""}`} onClick={() => handleSelect("core", "Energy Core")}>Energy Core</button>
+                        <button className={`part-option ${selectedParts.core === "Fusion Core" ? "selected" : ""}`} onClick={() => handleSelect("core", "Fusion Core")}>Fusion Core</button>
+                        <button className={`part-option ${selectedParts.core === "Plasma Core" ? "selected" : ""}`} onClick={() => handleSelect("core", "Plasma Core")}>Plasma Core</button>
                       </div>
                     </div>
                   </div>
@@ -292,44 +310,60 @@ export function Create() {
             <div className="card-body">
               <div className="d-flex flex-column align-items-center gap-2">
                 <div
-                  className="mech-box"
+                  className={`mech-box ${selectedParts.head ? "selected" : ""}`}
                   style={{ width: "80px", height: "80px" }}
-                ></div>
-
-                <div className="d-flex gap-2">
-                  <div
-                    className="mech-box"
-                    style={{ width: "80px", height: "80px" }}
-                  ></div>
-                  <div
-                    className="mech-box"
-                    style={{ width: "80px", height: "80px" }}
-                  ></div>
-                  <div
-                    className="mech-box"
-                    style={{ width: "80px", height: "80px" }}
-                  ></div>
+                >
+                  <span className="part-label">{selectedParts.head || "Head"}</span>
                 </div>
 
                 <div className="d-flex gap-2">
                   <div
-                    className="mech-box"
-                    style={{ width: "60px", height: "80px" }}
-                  ></div>
-                  <div
-                    className="mech-box"
+                    className={`mech-box ${selectedParts.leftShoulder ? "selected" : ""}`}
                     style={{ width: "80px", height: "80px" }}
-                  ></div>
+                  >
+                    <span className="part-label">{selectedParts.leftShoulder || "L. Shoulder"}</span>
+                  </div>
                   <div
-                    className="mech-box"
+                    className={`mech-box ${selectedParts.body ? "selected" : ""}`}
+                    style={{ width: "80px", height: "80px" }}
+                  >
+                    <span className="part-label">{selectedParts.body || "Body"}</span>
+                  </div>
+                  <div
+                    className={`mech-box ${selectedParts.rightShoulder ? "selected" : ""}`}
+                    style={{ width: "80px", height: "80px" }}
+                  >
+                    <span className="part-label">{selectedParts.rightShoulder || "R. Shoulder"}</span>
+                  </div>
+                </div>
+
+                <div className="d-flex gap-2">
+                  <div
+                    className={`mech-box ${selectedParts.leftHand ? "selected" : ""}`}
                     style={{ width: "60px", height: "80px" }}
-                  ></div>
+                  >
+                    <span className="part-label">{selectedParts.leftHand || "L. Hand"}</span>
+                  </div>
+                  <div
+                    className={`mech-box ${selectedParts.core ? "selected" : ""}`}
+                    style={{ width: "80px", height: "80px" }}
+                  >
+                    <span className="part-label">{selectedParts.core || "Core"}</span>
+                  </div>
+                  <div
+                    className={`mech-box ${selectedParts.rightHand ? "selected" : ""}`}
+                    style={{ width: "60px", height: "80px" }}
+                  >
+                    <span className="part-label">{selectedParts.rightHand || "R. Hand"}</span>
+                  </div>
                 </div>
 
                 <div
-                  className="mech-box"
+                  className={`mech-box ${selectedParts.legs ? "selected" : ""}`}
                   style={{ width: "80px", height: "80px" }}
-                ></div>
+                >
+                  <span className="part-label">{selectedParts.legs || "Legs"}</span>
+                </div>
               </div>
             </div>
           </div>

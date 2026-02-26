@@ -141,9 +141,39 @@ h1, h2, h3, h4, h5, h6, .display-5 {
 .mech-box {
     border: 2px solid #999;
     background: linear-gradient(135deg, #ccc, #eee);
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 5px;
     border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.mech-box.selected {
+    border-color: #0066cc;
+    background: linear-gradient(135deg, #cce0ff, #99c2ff);
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
+}
+
+.part-label {
+    font-size: 10px;
+    text-align: center;
+    color: #333;
+    padding: 4px;
+    word-wrap: break-word;
+    font-weight: 500;
+}
+
+.mech-box.selected .part-label {
+    color: #0052a3;
+    font-weight: 700;
+}
+
+.part-option.selected {
+    background-color: #0066cc !important;
+    color: white !important;
+    border-color: #0052a3;
+    box-shadow: 0 0 8px rgba(0, 102, 204, 0.6);
 }
 
 /* Stats table */
