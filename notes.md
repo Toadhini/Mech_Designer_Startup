@@ -84,6 +84,8 @@ My focus for this part is to make sure that obviously everything works but as we
 
 Successfull deployment of Simon final React code
 
+Got the reactivity for the clicking of the parts working so now when a part is clicked it shows up in the center piece on the create page. Now the part is figuring out how to work with the data sheets and the updating of that.ß
+
 ## Helpful Links
 
 A webpage that allows users to create an account and then create datasheets for mechs/robots with interchangable parts that they can save and share their creations as well as browse through creations by other users.
