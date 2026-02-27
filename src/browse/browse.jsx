@@ -50,44 +50,46 @@ export function Browse() {
             </div>
 
             <div className="row g-4">
-                <div className="col-12 col-md-6 col-lg-4">
-                    <div className="card mech-card shadow">
-                        <div className="card-header bg-primary text-white">
-                            <h5 className="mb-0">Placeholder Mech</h5>
-                        </div>
-                        <div className="card-body">
-                            <p className="card-text"><strong>Username:</strong> Placeholder User</p>
-                            
-                            <table className="table table-sm table-bordered mt-3">
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Attack</strong></td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Armor</strong></td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Speed</strong></td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Weight</strong></td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Energy</strong></td>
-                                        <td>0</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div className="card-footer">
-                            <button className="btn btn-outline-primary btn-sm w-100">View Details</button>
+                {mockMechs.map((mech) => (
+                    <div key={mech.id} className="col-12 col-md-6 col-lg-4">
+                        <div className="card mech-card shadow">
+                            <div className="card-header bg-primary text-white">
+                                <h5 className="mb-0">{mech.name}</h5>
+                            </div>
+                            <div className="card-body">
+                                <p className="card-text"><strong>Username:</strong> {mech.username}</p>
+                                
+                                <table className="table table-sm table-bordered mt-3">
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Attack</strong></td>
+                                            <td>{mech.stats.attack}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Armor</strong></td>
+                                            <td>{mech.stats.armor}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Speed</strong></td>
+                                            <td>{mech.stats.speed}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Weight</strong></td>
+                                            <td>{mech.stats.weight}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Energy</strong></td>
+                                            <td>{mech.stats.energy}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="card-footer">
+                                <button className="btn btn-outline-primary btn-sm w-100">View Details</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                ))}
             </div>
         </main>
     )
