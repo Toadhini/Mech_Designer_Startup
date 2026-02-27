@@ -1,5 +1,41 @@
 import React, { useState } from 'react';
 
+// Mock data - later this will come from your database
+const mockMechs = [
+    {
+        id: 1,
+        name: "Shadow Striker",
+        username: "MechPilot42",
+        parts: {
+            head: "Light Head",
+            leftShoulder: "Light Left Shoulder",
+            rightShoulder: "Light Right Shoulder",
+            leftHand: "Machine Gun",
+            rightHand: "Sword",
+            body: "Light Body",
+            core: "Energy Core",
+            legs: "Medium Legs"
+        },
+        stats: { attack: 45, armor: 30, speed: 85, weight: 120, energy: 60 }
+    },
+    {
+        id: 2,
+        name: "Iron Guardian",
+        username: "TankMaster",
+        parts: {
+            head: "Heavy Head",
+            leftShoulder: "Heavy Left Shoulder",
+            rightShoulder: "Heavy Right Shoulder",
+            leftHand: "Rocket Launcher",
+            rightHand: "Heavy Machine Gun",
+            body: "Heavy Body",
+            core: "Fusion Core",
+            legs: "Heavy Legs"
+        },
+        stats: { attack: 80, armor: 95, speed: 25, weight: 250, energy: 45 }
+    }
+];
+
 export function Browse() {
     // State to track which mech's details we're viewing (null = none selected)
     const [selectedMech, setSelectedMech] = useState(null);
