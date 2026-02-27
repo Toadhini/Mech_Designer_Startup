@@ -14,6 +14,9 @@ export function Create() {
     core: "",
   });
 
+  // State for mech name
+  const [mechName, setMechName] = useState("");
+
   // Handler for part selection
   const handleSelect = (partType, partName) => {
     setSelectedParts((prev) => ({ ...prev, [partType]: partName }));
@@ -21,6 +24,49 @@ export function Create() {
 
   // Calculate total stats from selected parts
   const totalStats = calculateTotalStats(selectedParts);
+
+  // Save mech to localStorage
+  const handleSave = () => {
+    if (!mechName.trim()) {
+      alert("Please enter a mech name");
+      return;
+    }
+
+    // Get current user from localStorage
+    const currentUser = localStorage.getItem("currentUser") || "Anonymous";
+
+    // Create mech object
+    const newMech = {
+      id: Date.now(), // unique ID based on timestamp
+      name: mechName,
+      username: currentUser,
+      parts: selectedParts,
+      stats: totalStats,
+      createdAt: new Date().toISOString()
+    };
+
+    // Get existing mechs from localStorage
+    const existingMechs = JSON.parse(localStorage.getItem("savedMechs") || "[]");
+
+    // Add new mech and save
+    existingMechs.push(newMech);
+    localStorage.setItem("savedMechs", JSON.stringify(existingMechs));
+
+    alert(`"${mechName}" saved successfully!`);
+
+    // Reset form
+    setMechName("");
+    setSelectedParts({
+      head: "",
+      leftShoulder: "",
+      rightShoulder: "",
+      leftHand: "",
+      rightHand: "",
+      legs: "",
+      body: "",
+      core: "",
+    });
+  };
 
   return (
     <main className="container-fluid py-4">
@@ -423,12 +469,15 @@ export function Create() {
                     className="form-control"
                     id="mechName"
                     placeholder="Enter your mech name"
+                    value={mechName}
+                    onChange={(e) => setMechName(e.target.value)}
                   />
                 </div>
                 <div className="col-md-4 text-end mt-3 mt-md-0">
                   <button
                     id="saveMech"
                     className="btn btn-primary btn-lg w-100"
+                    onClick={handleSave}
                   >
                     Save Mech Sheet
                   </button>

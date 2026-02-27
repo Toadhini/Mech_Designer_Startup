@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Mock data - later this will come from your database
 const mockMechs = [
@@ -39,6 +39,20 @@ const mockMechs = [
 export function Browse() {
     // State to track which mech's details we're viewing (null = none selected)
     const [selectedMech, setSelectedMech] = useState(null);
+    
+    // State for user-saved mechs from localStorage
+    const [savedMechs, setSavedMechs] = useState([]);
+
+    // Load saved mechs from localStorage on component mount
+    useEffect(() => {
+        const stored = localStorage.getItem("savedMechs");
+        if (stored) {
+            setSavedMechs(JSON.parse(stored));
+        }
+    }, []);
+
+    // Combine mock mechs with saved mechs
+    const allMechs = [...mockMechs, ...savedMechs];
 
     return (
         <main className="container py-4">
@@ -50,7 +64,7 @@ export function Browse() {
             </div>
 
             <div className="row g-4">
-                {mockMechs.map((mech) => (
+                {allMechs.map((mech) => (
                     <div key={mech.id} className="col-12 col-md-6 col-lg-4">
                         <div className="card mech-card shadow">
                             <div className="card-header bg-primary text-white">
