@@ -85,7 +85,12 @@ export function Browse() {
                                 </table>
                             </div>
                             <div className="card-footer">
-                                <button className="btn btn-outline-primary btn-sm w-100">View Details</button>
+                                <button 
+                                    className="btn btn-outline-primary btn-sm w-100"
+                                    onClick={() => setSelectedMech(mech)}
+                                >
+                                    View Details
+                                </button>
                             </div>
                         </div>
                     </div>
