@@ -84,7 +84,9 @@ My focus for this part is to make sure that obviously everything works but as we
 
 Successfull deployment of Simon final React code
 
-Got the reactivity for the clicking of the parts working so now when a part is clicked it shows up in the center piece on the create page. Now the part is figuring out how to work with the data sheets and the updating of that.ß
+Got the reactivity for the clicking of the parts working so now when a part is clicked it shows up in the center piece on the create page. Now the part is figuring out how to work with the data sheets and the updating of that.
+
+Took a while but got everything "working" as it needs to be. Still needs webhook and further development to have it behaving as it will in final format but all is functioning at the moment.
 
 ## Helpful Links
 

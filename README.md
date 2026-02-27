@@ -112,8 +112,21 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **All functionality implemented or mocked out** - 
-- [ ] **Hooks** - 
+- [X] **All functionality implemented or mocked out** - Added the functionality to have it "working" everything does as intended just waiting for webhook and other parts
+- [X] **Hooks** - useState implemented for the following:
+    - isLogin: boolean value to track login state
+    - username: store username input
+    - password: store password input
+    - confirmPassword: sotre confirm password input
+    - error: display validation error message
+    - currentUser: store current user information
+    - selectedParts: store selected parts for mech
+    - mechName: store mech name input
+    - selectedMech: track which details to show 
+    - savedMechs: store mechs in localStorage
+useEffect implemented for the following:
+    - check if user is already logged in 
+    - load saved mechs from localStorage
 
 ## 🚀 Service deliverable
 
