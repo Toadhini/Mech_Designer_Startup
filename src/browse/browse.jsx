@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export function Browse() {
+    // State to track which mech's details we're viewing (null = none selected)
+    const [selectedMech, setSelectedMech] = useState(null);
+
     return (
         <main className="container py-4">
             <div className="row mb-4">
