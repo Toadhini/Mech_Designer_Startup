@@ -92,6 +92,10 @@ Took a while but got everything "working" as it needs to be. Still needs webhook
 
 For my API service I am going to utilisie a simple API that pulls random mech/robot quotes online from a website. Currently looking into any other possible use cases.
 
+Simon service successfully deployed.
+
+Going through the code and the example of how it is done is very helpufl to see how come of the innards of the code.
+
 ## Helpful Links
 
 A webpage that allows users to create an account and then create datasheets for mechs/robots with interchangable parts that they can save and share their creations as well as browse through creations by other users.
