@@ -56,6 +56,7 @@ export function Create() {
       username: currentUser,
       parts: selectedParts,
       stats: totalStats,
+      pilot: pilotProfile,
       createdAt: new Date().toISOString()
     };
 
@@ -70,6 +71,8 @@ export function Create() {
 
     // Reset form
     setMechName("");
+    setPilotProfile(null);
+    setPilotName("");
     setSelectedParts({
       head: "",
       leftShoulder: "",
