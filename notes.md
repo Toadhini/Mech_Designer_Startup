@@ -96,6 +96,8 @@ Simon service successfully deployed.
 
 Going through the code and the example of how it is done is very helpufl to see how come of the innards of the code.
 
+Took me a while to finally decide on what to do and I actually chagned it to utiilize an API I found to create 'pilot' profiles for the mechs with random stats. The API is pretty simple luckily and doesn't require any authentication so it makes it easier to use.
+
 ## Helpful Links
 
 A webpage that allows users to create an account and then create datasheets for mechs/robots with interchangable parts that they can save and share their creations as well as browse through creations by other users.
