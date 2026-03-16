@@ -31,6 +31,14 @@ export function Create() {
   // Calculate total stats from selected parts
   const totalStats = calculateTotalStats(selectedParts);
 
+  // Generate pilot profile using D&D API
+  const handleGeneratePilot = async () => {
+    setPilotLoading(true);
+    const profile = await generatePilotProfile(pilotName || "Unknown Pilot");
+    setPilotProfile(profile);
+    setPilotLoading(false);
+  };
+
   // Save mech to localStorage
   const handleSave = () => {
     if (!mechName.trim()) {
