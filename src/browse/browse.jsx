@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { formatModifier } from '../services/pilotService';
 
 // Mock data - later this will come from your database
 const mockMechs = [
@@ -194,6 +195,39 @@ export function Browse() {
                                         </table>
                                     </div>
                                 </div>
+
+                                {/* Pilot Profile Section */}
+                                {selectedMech.pilot && (
+                                    <>
+                                        <hr />
+                                        <h6>Pilot Profile</h6>
+                                        <div className="row">
+                                            <div className="col-md-6">
+                                                <p className="mb-1"><strong>{selectedMech.pilot.name}</strong></p>
+                                                <span className="badge bg-primary">{selectedMech.pilot.pilotClass?.name}</span>
+                                                <p className="text-muted small mt-2">{selectedMech.pilot.pilotClass?.description}</p>
+                                            </div>
+                                            <div className="col-md-6">
+                                                <table className="table table-sm table-bordered">
+                                                    <tbody>
+                                                        {Object.entries(selectedMech.pilot.stats).map(([stat, value]) => (
+                                                            <tr key={stat}>
+                                                                <td><strong>{stat}</strong></td>
+                                                                <td>{value}</td>
+                                                                <td className="text-muted">{formatModifier(value)}</td>
+                                                            </tr>
+                                                        ))}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        {selectedMech.pilot.apiSource && (
+                                            <p className="text-success small mb-0">
+                                                ✓ Pilot stats powered by D&D 5e API
+                                            </p>
+                                        )}
+                                    </>
+                                )}
                             </div>
                             <div className="modal-footer">
                                 <button 
