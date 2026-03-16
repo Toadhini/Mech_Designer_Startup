@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { calculateTotalStats } from "../data/partsData";
+import { generatePilotProfile, formatModifier } from "../services/pilotService";
 
 export function Create() {
   // State for selected parts
@@ -16,6 +17,11 @@ export function Create() {
 
   // State for mech name
   const [mechName, setMechName] = useState("");
+
+  // State for pilot profile
+  const [pilotProfile, setPilotProfile] = useState(null);
+  const [pilotLoading, setPilotLoading] = useState(false);
+  const [pilotName, setPilotName] = useState("");
 
   // Handler for part selection
   const handleSelect = (partType, partName) => {
