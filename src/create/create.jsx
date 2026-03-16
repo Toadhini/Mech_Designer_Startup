@@ -469,6 +469,78 @@ export function Create() {
         </div>
       </div>
 
+      {/* Pilot Profile Section */}
+      <div className="row mt-4">
+        <div className="col-12">
+          <div className="card shadow">
+            <div className="card-header text-center section-header">
+              Pilot Profile
+              <small className="d-block text-muted" style={{ fontSize: '0.7em' }}>
+                Powered by D&D 5e API
+              </small>
+            </div>
+            <div className="card-body">
+              <div className="row align-items-center mb-3">
+                <div className="col-md-8">
+                  <label htmlFor="pilotName" className="form-label fw-bold">
+                    Pilot Name:
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="pilotName"
+                    placeholder="Enter pilot name (optional)"
+                    value={pilotName}
+                    onChange={(e) => setPilotName(e.target.value)}
+                  />
+                </div>
+                <div className="col-md-4 text-end mt-3 mt-md-0">
+                  <button
+                    className="btn btn-secondary w-100"
+                    onClick={handleGeneratePilot}
+                    disabled={pilotLoading}
+                  >
+                    {pilotLoading ? "Generating..." : "Generate Pilot"}
+                  </button>
+                </div>
+              </div>
+
+              {pilotProfile && (
+                <div className="pilot-profile-result mt-3">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <h6 className="fw-bold">{pilotProfile.name}</h6>
+                      <p className="mb-2">
+                        <span className="badge bg-primary">{pilotProfile.pilotClass?.name}</span>
+                      </p>
+                      <p className="text-muted small">{pilotProfile.pilotClass?.description}</p>
+                    </div>
+                    <div className="col-md-6">
+                      <table className="table table-sm table-bordered">
+                        <tbody>
+                          {Object.entries(pilotProfile.stats).map(([stat, value]) => (
+                            <tr key={stat}>
+                              <td><strong>{stat}</strong></td>
+                              <td>{value}</td>
+                              <td className="text-muted">{formatModifier(value)}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  {pilotProfile.apiSource && (
+                    <p className="text-success small mb-0">
+                      ✓ Stats generated using D&D 5e API ability scores
+                    </p>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="row mt-4">
         <div className="col-12">
           <div className="card shadow">
