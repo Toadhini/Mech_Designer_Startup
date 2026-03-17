@@ -1,0 +1,15 @@
+{
+  "name": "mech-designer-service",
+  "version": "1.0.0",
+  "description": "Backend service for Mech Designer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
+}
