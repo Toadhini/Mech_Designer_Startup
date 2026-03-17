@@ -132,11 +132,11 @@ useEffect implemented for the following:
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
+- [X] **Node.js/Express HTTP service** - Created Express server in service/index.js that serves the application on port 4000.
+- [X] **Static middleware for frontend** - Express serves the built frontend files from the dist folder using express.static middleware.
+- [X] **Calls to third party endpoints** - Backend calls the D&D 5e API (https://www.dnd5eapi.co/api/ability-scores) to fetch ability score data for generating pilot profiles.
+- [X] **Backend service endpoints** - Created POST /api/pilot endpoint that generates pilot profiles with randomized stats and assigns pilot classes based on highest stat.
+- [X] **Frontend calls service endpoints** - Frontend pilotService.js calls the backend /api/pilot endpoint to generate pilot profiles.
 - [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
 
 ## 🚀 DB deliverable
