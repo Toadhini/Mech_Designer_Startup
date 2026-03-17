@@ -10,14 +10,24 @@ export function Login() {
   const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
 
+  // Check if user is already authenticated on mount
   useEffect(() => {
-    const user = localStorage.getItem("currentUser");
-    if (user) {
-      setCurrentUser(user);
+    async function checkAuth() {
+      try {
+        const res = await fetch('/api/user/me');
+        if (res.ok) {
+          const data = await res.json();
+          setCurrentUser(data.email);
+          localStorage.setItem("currentUser", data.email);
+        }
+      } catch (err) {
+        console.error('Auth check failed:', err);
+      }
     }
+    checkAuth();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
@@ -27,6 +37,7 @@ export function Login() {
     }
 
     if (!isLogin) {
+      // Registration
       if (password !== confirmPassword) {
         setError("Passwords do not match");
         return;
@@ -35,15 +46,54 @@ export function Login() {
         setError("Password must be at least 4 characters");
         return;
       }
-      localStorage.setItem("currentUser", username);
-      setCurrentUser(username);
+
+      try {
+        const res = await fetch('/api/auth', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: username, password }),
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          setCurrentUser(data.email);
+          localStorage.setItem("currentUser", data.email);
+        } else if (res.status === 409) {
+          setError("User already exists");
+        } else {
+          setError("Registration failed");
+        }
+      } catch (err) {
+        setError("Registration failed");
+      }
     } else {
-      localStorage.setItem("currentUser", username);
-      setCurrentUser(username);
+      // Login
+      try {
+        const res = await fetch('/api/auth', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: username, password }),
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          setCurrentUser(data.email);
+          localStorage.setItem("currentUser", data.email);
+        } else {
+          setError("Invalid username or password");
+        }
+      } catch (err) {
+        setError("Login failed");
+      }
     }
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    try {
+      await fetch('/api/auth', { method: 'DELETE' });
+    } catch (err) {
+      console.error('Logout error:', err);
+    }
     localStorage.removeItem("currentUser");
     setCurrentUser(null);
     setUsername("");

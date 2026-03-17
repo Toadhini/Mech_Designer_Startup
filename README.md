@@ -137,7 +137,7 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 - [X] **Calls to third party endpoints** - Backend calls the D&D 5e API (https://www.dnd5eapi.co/api/ability-scores) to fetch ability score data for generating pilot profiles.
 - [X] **Backend service endpoints** - Created POST /api/pilot endpoint that generates pilot profiles with randomized stats and assigns pilot classes based on highest stat.
 - [X] **Frontend calls service endpoints** - Frontend pilotService.js calls the backend /api/pilot endpoint to generate pilot profiles.
-- [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
+- [X] **Supports registration, login, logout, and restricted endpoint** - Implemented POST /api/auth (register), PUT /api/auth (login), DELETE /api/auth (logout), and GET /api/user/me (restricted endpoint requiring authentication). Uses bcrypt for password hashing and HTTP-only cookies for secure token storage.
 
 ## 🚀 DB deliverable
 
