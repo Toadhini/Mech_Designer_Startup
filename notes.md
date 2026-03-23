@@ -98,6 +98,13 @@ Going through the code and the example of how it is done is very helpufl to see 
 
 Took me a while to finally decide on what to do and I actually chagned it to utiilize an API I found to create 'pilot' profiles for the mechs with random stats. The API is pretty simple luckily and doesn't require any authentication so it makes it easier to use.
 
+## DB
+
+For the Database deliverable we are utilizing the MongoDB database to store our user information in a persistent manner so it can be stored between sessions.
+
+For my implemenation I am using the databse to store the mech sheets that users create and save so they can be viewed by themselves and others. Eventually webhook will help streamline and make this service more efficient.
+
+
 ## Helpful Links
 
 A webpage that allows users to create an account and then create datasheets for mechs/robots with interchangable parts that they can save and share their creations as well as browse through creations by other users.
