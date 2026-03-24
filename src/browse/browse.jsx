@@ -1,59 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { formatModifier } from '../services/pilotService';
-
-// Mock data - later this will come from your database
-const mockMechs = [
-    {
-        id: 1,
-        name: "Shadow Striker",
-        username: "MechPilot42",
-        parts: {
-            head: "Light Head",
-            leftShoulder: "Light Left Shoulder",
-            rightShoulder: "Light Right Shoulder",
-            leftHand: "Machine Gun",
-            rightHand: "Sword",
-            body: "Light Body",
-            core: "Energy Core",
-            legs: "Medium Legs"
-        },
-        stats: { attack: 45, armor: 30, speed: 85, weight: 120, energy: 60 }
-    },
-    {
-        id: 2,
-        name: "Iron Guardian",
-        username: "TankMaster",
-        parts: {
-            head: "Heavy Head",
-            leftShoulder: "Heavy Left Shoulder",
-            rightShoulder: "Heavy Right Shoulder",
-            leftHand: "Rocket Launcher",
-            rightHand: "Heavy Machine Gun",
-            body: "Heavy Body",
-            core: "Fusion Core",
-            legs: "Heavy Legs"
-        },
-        stats: { attack: 80, armor: 95, speed: 25, weight: 250, energy: 45 }
-    }
-];
+import { getAllMechs } from '../services/mechService';
 
 export function Browse() {
     // State to track which mech's details we're viewing (null = none selected)
     const [selectedMech, setSelectedMech] = useState(null);
     
-    // State for user-saved mechs from localStorage
-    const [savedMechs, setSavedMechs] = useState([]);
+    // State for mechs from database
+    const [allMechs, setAllMechs] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    // Load saved mechs from localStorage on component mount
+    // Load mechs from database on component mount
     useEffect(() => {
-        const stored = localStorage.getItem("savedMechs");
-        if (stored) {
-            setSavedMechs(JSON.parse(stored));
+        async function fetchMechs() {
+            try {
+                const mechs = await getAllMechs();
+                setAllMechs(mechs);
+            } catch (error) {
+                console.error('Failed to load mechs:', error);
+            } finally {
+                setLoading(false);
+            }
         }
+        fetchMechs();
     }, []);
-
-    // Combine mock mechs with saved mechs
-    const allMechs = [...mockMechs, ...savedMechs];
 
     return (
         <main className="container py-4">
@@ -64,9 +34,23 @@ export function Browse() {
                 </div>
             </div>
 
+            {loading && (
+                <div className="text-center py-5">
+                    <div className="spinner-border text-primary" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            )}
+
+            {!loading && allMechs.length === 0 && (
+                <div className="alert alert-info">
+                    No mechs have been created yet. Be the first to create one!
+                </div>
+            )}
+
             <div className="row g-4">
                 {allMechs.map((mech) => (
-                    <div key={mech.id} className="col-12 col-md-6 col-lg-4">
+                    <div key={mech._id || mech.id} className="col-12 col-md-6 col-lg-4">
                         <div className="card mech-card shadow">
                             <div className="card-header bg-primary text-white">
                                 <h5 className="mb-0">{mech.name}</h5>
