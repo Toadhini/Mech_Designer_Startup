@@ -143,8 +143,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
+- [X] **Stores data in MongoDB** - MongoDB sussfully stores mech objects to persist and be saved by users
+- [X] **Stores credentials in MongoDB** - Successfully allows users to create accounts, and saves them in MongoDB for future logins.
 
 ## 🚀 WebSocket deliverable
 
