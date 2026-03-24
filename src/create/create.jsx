@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { calculateTotalStats } from "../data/partsData";
 import { generatePilotProfile, formatModifier } from "../services/pilotService";
+import { saveMech } from "../services/mechService";
 
 export function Create() {
   // State for selected parts
@@ -39,50 +40,44 @@ export function Create() {
     setPilotLoading(false);
   };
 
-  // Save mech to localStorage
-  const handleSave = () => {
+  // Save mech to database
+  const handleSave = async () => {
     if (!mechName.trim()) {
       alert("Please enter a mech name");
       return;
     }
 
-    // Get current user from localStorage
-    const currentUser = localStorage.getItem("currentUser") || "Anonymous";
-
-    // Create mech object
+    // Create mech object (username is added by the server from auth token)
     const newMech = {
-      id: Date.now(), // unique ID based on timestamp
       name: mechName,
-      username: currentUser,
       parts: selectedParts,
       stats: totalStats,
       pilot: pilotProfile,
-      createdAt: new Date().toISOString()
     };
 
-    // Get existing mechs from localStorage
-    const existingMechs = JSON.parse(localStorage.getItem("savedMechs") || "[]");
+    try {
+      // Call API to save mech to database
+      await saveMech(newMech);
+      alert(`"${mechName}" saved successfully!`);
 
-    // Add new mech and save
-    existingMechs.push(newMech);
-    localStorage.setItem("savedMechs", JSON.stringify(existingMechs));
-
-    alert(`"${mechName}" saved successfully!`);
-
-    // Reset form
-    setMechName("");
-    setPilotProfile(null);
-    setPilotName("");
-    setSelectedParts({
-      head: "",
-      leftShoulder: "",
-      rightShoulder: "",
-      leftHand: "",
-      rightHand: "",
-      legs: "",
-      body: "",
-      core: "",
-    });
+      // Reset form
+      setMechName("");
+      setPilotProfile(null);
+      setPilotName("");
+      setSelectedParts({
+        head: "",
+        leftShoulder: "",
+        rightShoulder: "",
+        leftHand: "",
+        rightHand: "",
+        legs: "",
+        body: "",
+        core: "",
+      });
+    } catch (error) {
+      // Show error if not logged in or save fails
+      alert("Failed to save mech. Please make sure you are logged in.");
+    }
   };
 
   return (
