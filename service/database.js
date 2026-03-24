@@ -15,6 +15,7 @@ const db = client.db('mechdesigner');
 
 const userCollection = db.collection('users');
 const pilotCollection = db.collection('pilots');
+const mechCollection = db.collection('mechs');
 
 (async function testConnection() {
   try {
@@ -72,6 +73,36 @@ async function deletePilot(id, userEmail) {
   return pilotCollection.deleteOne({ _id: new ObjectId(id), userEmail });
 }
 
+// Mech functions
+// Save a new mech to the database
+async function saveMech(mech) {
+  mech.createdAt = new Date();
+  await mechCollection.insertOne(mech);
+  return mech;
+}
+
+// Get all mechs (for the browse page)
+async function getAllMechs() {
+  return mechCollection.find({}).sort({ createdAt: -1 }).toArray();
+}
+
+// Get mechs belonging to a specific user
+async function getMechsByUser(username) {
+  return mechCollection.find({ username }).sort({ createdAt: -1 }).toArray();
+}
+
+// Get a single mech by its ID
+async function getMechById(id) {
+  const { ObjectId } = require('mongodb');
+  return mechCollection.findOne({ _id: new ObjectId(id) });
+}
+
+// Delete a mech (only if the user owns it)
+async function deleteMech(id, username) {
+  const { ObjectId } = require('mongodb');
+  return mechCollection.deleteOne({ _id: new ObjectId(id), username });
+}
+
 module.exports = {
   createUser,
   getUser,
@@ -81,4 +112,9 @@ module.exports = {
   getPilots,
   getPilotById,
   deletePilot,
+  saveMech,
+  getAllMechs,
+  getMechsByUser,
+  getMechById,
+  deleteMech,
 };
