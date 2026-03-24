@@ -151,6 +151,63 @@ app.post('/api/pilot', async (req, res) => {
   }
 });
 
+// Save a mech (requires authentication)
+app.post('/api/mech', async (req, res) => {
+  // Check if user is logged in by looking for their token
+  const token = req.cookies['token'];
+  const user = await DB.getUser('token', token);
+  
+  if (!user) {
+    return res.status(401).send({ msg: 'Unauthorized' });
+  }
+
+  // Build the mech object with user's email as owner
+  const mech = {
+    name: req.body.name,
+    username: user.email,
+    parts: req.body.parts,
+    stats: req.body.stats,
+    pilot: req.body.pilot,
+  };
+
+  // Save to database and return the saved mech
+  const savedMech = await DB.saveMech(mech);
+  res.send(savedMech);
+});
+
+// Get all mechs (public - for browse page)
+app.get('/api/mechs', async (req, res) => {
+  const mechs = await DB.getAllMechs();
+  res.send(mechs);
+});
+
+// Get current user's mechs only (requires authentication)
+app.get('/api/mechs/mine', async (req, res) => {
+  const token = req.cookies['token'];
+  const user = await DB.getUser('token', token);
+  
+  if (!user) {
+    return res.status(401).send({ msg: 'Unauthorized' });
+  }
+
+  const mechs = await DB.getMechsByUser(user.email);
+  res.send(mechs);
+});
+
+// Delete a mech (requires authentication + ownership)
+app.delete('/api/mech/:id', async (req, res) => {
+  const token = req.cookies['token'];
+  const user = await DB.getUser('token', token);
+  
+  if (!user) {
+    return res.status(401).send({ msg: 'Unauthorized' });
+  }
+
+  // req.params.id comes from the :id in the URL
+  await DB.deleteMech(req.params.id, user.email);
+  res.send({ msg: 'Deleted' });
+});
+
 // Catch-all route to serve frontend for client-side routing
 app.get('*', (req, res) => {
   res.sendFile('index.html', { root: 'public' });
