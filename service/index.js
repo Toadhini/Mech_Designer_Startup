@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const uuid = require('uuid');
 const bcrypt = require('bcryptjs');
+const DB = require('./database.js');
 
 const app = express();
 const port = process.argv[2] || 4000;
@@ -13,58 +14,39 @@ app.use(cookieParser());
 // Serve static frontend files from the 'public' directory (for production on AWS)
 app.use(express.static('public'));
 
-// In-memory user storage (will be replaced with DB later)
-const users = [];
-
-// User helper functions
-async function createUser(email, password) {
-  const passwordHash = await bcrypt.hash(password, 10);
-  const user = {
-    email: email,
-    password: passwordHash,
-  };
-  users.push(user);
-  return user;
-}
-
-function getUser(field, value) {
-  if (value) {
-    return users.find((user) => user[field] === value);
-  }
-  return null;
-}
-
 // Cookie helper functions
-function setAuthCookie(res, user) {
-  user.token = uuid.v4();
-  res.cookie('token', user.token, {
+async function setAuthCookie(res, user) {
+  const token = uuid.v4();
+  await DB.updateUserToken(user.email, token);
+  res.cookie('token', token, {
     secure: true,
     httpOnly: true,
     sameSite: 'strict',
   });
 }
 
-function clearAuthCookie(res, user) {
-  delete user.token;
+async function clearAuthCookie(res, user) {
+  await DB.clearUserToken(user.email);
   res.clearCookie('token');
 }
 
 // Registration endpoint
 app.post('/api/auth', async (req, res) => {
-  if (await getUser('email', req.body.email)) {
+  if (await DB.getUser('email', req.body.email)) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
-    const user = await createUser(req.body.email, req.body.password);
-    setAuthCookie(res, user);
+    const passwordHash = await bcrypt.hash(req.body.password, 10);
+    const user = await DB.createUser(req.body.email, passwordHash);
+    await setAuthCookie(res, user);
     res.send({ email: user.email });
   }
 });
 
 // Login endpoint
 app.put('/api/auth', async (req, res) => {
-  const user = await getUser('email', req.body.email);
+  const user = await DB.getUser('email', req.body.email);
   if (user && (await bcrypt.compare(req.body.password, user.password))) {
-    setAuthCookie(res, user);
+    await setAuthCookie(res, user);
     res.send({ email: user.email });
   } else {
     res.status(401).send({ msg: 'Unauthorized' });
@@ -74,9 +56,9 @@ app.put('/api/auth', async (req, res) => {
 // Logout endpoint
 app.delete('/api/auth', async (req, res) => {
   const token = req.cookies['token'];
-  const user = await getUser('token', token);
+  const user = await DB.getUser('token', token);
   if (user) {
-    clearAuthCookie(res, user);
+    await clearAuthCookie(res, user);
   }
   res.send({});
 });
@@ -84,7 +66,7 @@ app.delete('/api/auth', async (req, res) => {
 // GetMe endpoint
 app.get('/api/user/me', async (req, res) => {
   const token = req.cookies['token'];
-  const user = await getUser('token', token);
+  const user = await DB.getUser('token', token);
   if (user) {
     res.send({ email: user.email });
   } else {
