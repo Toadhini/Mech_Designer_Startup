@@ -1,11 +1,12 @@
 const { MongoClient } = require('mongodb');
+const config = require('./dbConfig.json');
 
-const userName = process.env.MONGOUSER;
-const password = process.env.MONGOPASSWORD;
-const hostname = process.env.MONGOHOSTNAME;
+const userName = config.userName;
+const password = config.password;
+const hostname = config.hostname;
 
 if (!hostname) {
-  throw new Error('Database not configured. Set MONGOUSER, MONGOPASSWORD, and MONGOHOSTNAME environment variables.');
+  throw new Error('Database not configured. Set hostname, userName, and password in dbConfig.json');
 }
 
 const url = `mongodb+srv://${userName}:${password}@${hostname}`;
