@@ -104,8 +104,6 @@ For the Database deliverable we are utilizing the MongoDB database to store our 
 
 For my implemenation I am using the databse to store the mech sheets that users create and save so they can be viewed by themselves and others. Eventually webhook will help streamline and make this service more efficient.
 
-MongoDB username: my netID
-MongoDB password: AyHPdefBt9jPWQK5
 
 ## Helpful Links
 
