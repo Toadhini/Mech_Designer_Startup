@@ -106,6 +106,9 @@ For my implemenation I am using the databse to store the mech sheets that users 
 
 Simon DB deployed to simon page of startup.
 
+Reworked code and deleted previous temp storage functionality. 
+Struggled a little with implementing the code but mainly followed the simon code and copied parts of it
+
 ## Helpful Links
 
 A webpage that allows users to create an account and then create datasheets for mechs/robots with interchangable parts that they can save and share their creations as well as browse through creations by other users.
