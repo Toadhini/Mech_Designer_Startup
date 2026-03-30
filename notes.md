@@ -107,7 +107,11 @@ For my implemenation I am using the databse to store the mech sheets that users 
 Simon DB deployed to simon page of startup.
 
 Reworked code and deleted previous temp storage functionality. 
-Struggled a little with implementing the code but mainly followed the simon code and copied parts of it
+Struggled a little with implementing the code but mainly followed the simon code and copied parts of it.
+
+## Websocket
+
+The main part of my websocket implementation is when users upload and save their mechs to the database. I am debating on having a notification pop up or something similar but that will be decided more in devlopment and time.
 
 ## Helpful Links
 
