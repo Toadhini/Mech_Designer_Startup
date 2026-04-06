@@ -113,6 +113,8 @@ Struggled a little with implementing the code but mainly followed the simon code
 
 The main part of my websocket implementation is when users upload and save their mechs to the database. I am debating on having a notification pop up or something similar but that will be decided more in devlopment and time.
 
+Simon Websocket deployed succesfully.
+
 ## Helpful Links
 
 A webpage that allows users to create an account and then create datasheets for mechs/robots with interchangable parts that they can save and share their creations as well as browse through creations by other users.
