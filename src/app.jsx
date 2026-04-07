@@ -7,6 +7,7 @@ import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { Create } from "./create/create";
 import { Browse } from "./browse/browse";
 import { Login } from "./login/login";
+import { LiveFeed } from "./components/LiveFeed";
 
 export default function App() {
   return( 
@@ -24,6 +25,8 @@ export default function App() {
           </div>
         </nav>
       </header>
+
+      <LiveFeed />
 
       <Routes>
         <Route path="/" element={<Login />} />
