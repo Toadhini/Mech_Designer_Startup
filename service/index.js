@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const uuid = require('uuid');
 const bcrypt = require('bcryptjs');
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 
 const app = express();
 const port = process.argv[2] || 4000;
@@ -213,6 +214,9 @@ app.get('*', (req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
-app.listen(port, () => {
+const httpServer = app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+// Set up WebSocket server on the same HTTP server
+peerProxy(httpServer);
