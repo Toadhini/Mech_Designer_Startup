@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 const config = require('./dbConfig.json');
 
 const userName = config.userName;
@@ -64,12 +64,10 @@ async function getPilots(userEmail) {
 }
 
 async function getPilotById(id) {
-  const { ObjectId } = require('mongodb');
   return pilotCollection.findOne({ _id: new ObjectId(id) });
 }
 
 async function deletePilot(id, userEmail) {
-  const { ObjectId } = require('mongodb');
   return pilotCollection.deleteOne({ _id: new ObjectId(id), userEmail });
 }
 
@@ -93,13 +91,11 @@ async function getMechsByUser(username) {
 
 // Get a single mech by its ID
 async function getMechById(id) {
-  const { ObjectId } = require('mongodb');
   return mechCollection.findOne({ _id: new ObjectId(id) });
 }
 
 // Delete a mech (only if the user owns it)
 async function deleteMech(id, username) {
-  const { ObjectId } = require('mongodb');
   return mechCollection.deleteOne({ _id: new ObjectId(id), username });
 }
 
