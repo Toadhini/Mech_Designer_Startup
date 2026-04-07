@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { calculateTotalStats } from "../data/partsData";
 import { generatePilotProfile, formatModifier } from "../services/pilotService";
 import { saveMech } from "../services/mechService";
+import webSocketService, { MechEvent } from "../services/webSocketService";
 
 export function Create() {
   // State for selected parts
@@ -57,7 +58,15 @@ export function Create() {
 
     try {
       // Call API to save mech to database
-      await saveMech(newMech);
+      const savedMech = await saveMech(newMech);
+      
+      // Broadcast to other users via WebSocket
+      webSocketService.sendEvent({
+        type: MechEvent.NewMech,
+        username: savedMech.username,
+        mechName: savedMech.name,
+      });
+      
       alert(`"${mechName}" saved successfully!`);
 
       // Reset form
