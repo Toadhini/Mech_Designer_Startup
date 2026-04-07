@@ -115,6 +115,14 @@ The main part of my websocket implementation is when users upload and save their
 
 Simon Websocket deployed succesfully.
 
+Going off what I noticed in the simon websocket helped me out a lot with understanding of what I need to do.
+
+I started by taking not that I needed to create a few more files to help with the websocket listening and sending back data. I needed a proxy file to help handle all of the clients that are connect and to broadcast the messages. I also created a service file to manage all of the frontend stuff. I then added the live feed component to display the live activity feed below the navbar.
+
+Vite config did cause me issues as I forgot to update that but all godo.
+
+Workis succesfully by when a user creates a new mech successfully shows that to the others users connected.ß
+
 ## Helpful Links
 
 A webpage that allows users to create an account and then create datasheets for mechs/robots with interchangable parts that they can save and share their creations as well as browse through creations by other users.
