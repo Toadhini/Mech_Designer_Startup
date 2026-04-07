@@ -13,6 +13,11 @@ class WebSocketService {
 
   // Connect to WebSocket server
   connect() {
+    // Prevent duplicate connections
+    if (this.socket && this.socket.readyState === WebSocket.OPEN) {
+      return;
+    }
+
     // Determine WebSocket URL based on current protocol (ws or wss)
     const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
     const url = `${protocol}://${window.location.host}/ws`;
@@ -26,14 +31,13 @@ class WebSocketService {
     };
 
     // Handle incoming messages
-    this.socket.onmessage = async (event) => {
+    this.socket.onmessage = (event) => {
       try {
-        const data = JSON.parse(await event.data.text());
+        const data = JSON.parse(event.data);
         this.receiveEvent(data);
       } catch {
-        // Handle text messages
-        const text = await event.data.text();
-        this.receiveEvent({ type: MechEvent.System, msg: text });
+        // Handle non-JSON messages
+        this.receiveEvent({ type: MechEvent.System, msg: event.data });
       }
     };
 
