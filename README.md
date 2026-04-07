@@ -150,8 +150,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [X] **Backend listens for WebSocket connection** - Created peerProxy.js that sets up a WebSocket server sharing the HTTP server. Handles client connections, broadcasts messages to all other clients, and uses ping/pong heartbeat to keep connections alive.
+- [X] **Frontend makes WebSocket connection** - Created webSocketService.js singleton that connects to the WebSocket server and manages the connection lifecycle. Automatically determines ws/wss protocol based on page protocol.
+- [X] **Data sent over WebSocket connection** - When a user saves a new mech, a message is broadcast through the WebSocket to notify all other connected users with the username and mech name.
+- [X] **WebSocket data displayed** - Added LiveFeed component below the navbar that shows a live activity feed. Displays a LIVE/OFFLINE status badge and shows notifications when other users create mechs.
+- [X] **Application is fully functional** - Users can create accounts, login, create mechs with parts and pilot profiles, save them to the database, and see real-time notifications when others create mechs.
