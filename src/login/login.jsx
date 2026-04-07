@@ -18,7 +18,6 @@ export function Login() {
         if (res.ok) {
           const data = await res.json();
           setCurrentUser(data.email);
-          localStorage.setItem("currentUser", data.email);
         }
       } catch (err) {
         console.error('Auth check failed:', err);
@@ -57,7 +56,6 @@ export function Login() {
         if (res.ok) {
           const data = await res.json();
           setCurrentUser(data.email);
-          localStorage.setItem("currentUser", data.email);
         } else if (res.status === 409) {
           setError("User already exists");
         } else {
@@ -78,7 +76,6 @@ export function Login() {
         if (res.ok) {
           const data = await res.json();
           setCurrentUser(data.email);
-          localStorage.setItem("currentUser", data.email);
         } else {
           setError("Invalid username or password");
         }
@@ -94,7 +91,6 @@ export function Login() {
     } catch (err) {
       console.error('Logout error:', err);
     }
-    localStorage.removeItem("currentUser");
     setCurrentUser(null);
     setUsername("");
     setPassword("");
