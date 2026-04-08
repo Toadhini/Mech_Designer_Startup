@@ -11,6 +11,7 @@ export function LiveFeed() {
 
     // Handler for incoming WebSocket events
     const handleEvent = (event) => {
+      console.log('LiveFeed received event:', event);
       if (event.type === MechEvent.NewMech) {
         // Add new mech notification
         const notification = {

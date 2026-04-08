@@ -63,8 +63,13 @@ class WebSocketService {
 
   // Send a message through the WebSocket
   sendEvent(event) {
+    console.log('Attempting to send WebSocket event:', event);
+    console.log('Socket state:', this.socket?.readyState, '(1 = OPEN)');
     if (this.socket && this.socket.readyState === WebSocket.OPEN) {
       this.socket.send(JSON.stringify(event));
+      console.log('Event sent successfully');
+    } else {
+      console.warn('WebSocket not connected, event not sent');
     }
   }
 
