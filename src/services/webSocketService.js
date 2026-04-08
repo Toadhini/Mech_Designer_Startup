@@ -31,13 +31,17 @@ class WebSocketService {
     };
 
     // Handle incoming messages
-    this.socket.onmessage = (event) => {
+    this.socket.onmessage = async (event) => {
       try {
-        const data = JSON.parse(event.data);
+        // Handle Blob data (some browsers send as Blob)
+        let text = event.data;
+        if (event.data instanceof Blob) {
+          text = await event.data.text();
+        }
+        const data = JSON.parse(text);
         this.receiveEvent(data);
-      } catch {
-        // Handle non-JSON messages
-        this.receiveEvent({ type: MechEvent.System, msg: event.data });
+      } catch (err) {
+        console.error('Error parsing WebSocket message:', err);
       }
     };
 
