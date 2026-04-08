@@ -121,7 +121,9 @@ I started by taking not that I needed to create a few more files to help with th
 
 Vite config did cause me issues as I forgot to update that but all godo.
 
-Workis succesfully by when a user creates a new mech successfully shows that to the others users connected.ß
+Workis succesfully by when a user creates a new mech successfully shows that to the others users connected.
+
+Had some issues but turned out I was using the wrong deployment.
 
 ## Helpful Links
 
